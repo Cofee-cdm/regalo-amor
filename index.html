@@ -4,117 +4,273 @@
   <title>Para Ti, Mi Corazon de Melocoton 💗🌷</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    :root {
+      --morado-principal: #e2d4f0; /* Morado clarito */
+      --morado-oscuro: #d0b8e0;
+      --morado-accent: #b399d4;
+      --texto: #3a2d4a;
+    }
+    
     body {
       font-family: 'Arial', sans-serif;
       text-align: center;
-      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      background: var(--morado-principal);
       margin: 0;
       padding: 0;
-      color: #333;
+      color: var(--texto);
+      min-height: 100vh;
+      line-height: 1.6;
     }
+    
     #portada {
       height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background-image: url('https://imgbb.com/TU-FOTO.jpg');
-      background-size: cover;
-      color: white;
-      text-shadow: 2px 2px 4px #000;
+      background: linear-gradient(135deg, var(--morado-principal) 0%, var(--morado-oscuro) 100%);
+      position: relative;
+      overflow: hidden;
     }
+    
+    #portada::before {
+      content: '';
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: url('https://www.transparenttextures.com/patterns/soft-circle-scales.png');
+      opacity: 0.1;
+      animation: movimiento 60s linear infinite;
+      z-index: 0;
+    }
+    
+    @keyframes movimiento {
+      0% { transform: translate(0, 0); }
+      50% { transform: translate(-50%, -50%); }
+      100% { transform: translate(0, 0); }
+    }
+    
+    #portada > * {
+      position: relative;
+      z-index: 1;
+    }
+    
     button {
-      background: #ff6b6b;
+      background: var(--morado-accent);
       color: white;
       border: none;
-      padding: 12px 25px;
+      padding: 12px 30px;
       font-size: 16px;
       border-radius: 50px;
-      margin: 10px;
+      margin: 15px;
       cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 12px rgba(179, 153, 212, 0.3);
+      transition: all 0.3s ease;
+      font-weight: 600;
+      letter-spacing: 1px;
     }
+    
+    button:hover {
+      background: #9f7fbf;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(179, 153, 212, 0.4);
+    }
+    
     .seccion {
       padding: 40px 20px;
       display: none;
+      background: white;
+      margin: 30px auto;
+      border-radius: 20px;
+      max-width: 800px;
+      box-shadow: 0 8px 25px rgba(163, 137, 193, 0.1);
+      border: 1px solid rgba(210, 184, 224, 0.3);
     }
+    
     .corazon {
-      font-size: 40px;
-      animation: latir 1s infinite;
+      font-size: 50px;
+      animation: latir 1.5s infinite;
+      margin: 20px 0;
+      color: var(--morado-accent);
+      text-shadow: 0 4px 8px rgba(179, 153, 212, 0.3);
     }
+    
     @keyframes latir {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.2); }
-      100% { transform: scale(1); }
+      0% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.15); opacity: 1; }
+      100% { transform: scale(1); opacity: 0.8; }
     }
+    
+    /* Galería mejorada */
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+    
+    .galeria img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(163, 137, 193, 0.2);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+      object-fit: cover;
+      height: 200px;
+    }
+    
+    .galeria img:hover {
+      transform: scale(1.05) rotate(-1deg);
+      box-shadow: 0 12px 25px rgba(163, 137, 193, 0.3);
+    }
+    
+    /* Carta especial */
     #carta {
       transform: rotateX(90deg);
       opacity: 0;
-      transition: 1s;
+      transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       background: white;
-      padding: 20px;
-      border-radius: 10px;
+      padding: 30px;
+      border-radius: 15px;
       max-width: 80%;
-      margin: 20px auto;
+      margin: 30px auto;
+      box-shadow: 0 10px 30px rgba(163, 137, 193, 0.2);
+      border-top: 5px solid var(--morado-accent);
+    }
+    
+    /* Efecto de texto seleccionable */
+    ::selection {
+      background: var(--morado-accent);
+      color: white;
     }
   </style>
 </head>
 <body>
+  <!-- Música de fondo -->
+  <audio autoplay loop id="musica" style="display:none;">
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    <!-- Reemplaza con tu canción -->
+  </audio>
+  
+  <!-- Control de música -->
+  <button onclick="controlarMusica()" style="position:fixed; top:20px; right:20px; z-index:1000; background: white; color: var(--morado-accent);">
+    ♫ Rises the Moon
+  </button>
+
   <!-- PORTADA -->
   <div id="portada">
-    <h1 style="font-size: 2.5em;">Para Paulitaa 💖</h1>
-    <p style="font-size: 1.2em;">"Amore aunque la distancia nos separe, mi corazon sigue latiendo por ti bb..."</p>
-    <button onclick="mostrarSeccion('disculpas')">Toca aquí, mi vida 💗</button>
+    <h1 style="font-size: 3em; color: var(--texto); margin-bottom: 20px; text-shadow: 0 2px 4px rgba(0,0,0,0.1);">Para Paulitaa 💜</h1>
+    <p style="font-size: 1.3em; max-width: 80%; margin: 0 auto 30px; color: var(--texto);">"En un universo de colores, elegiría el morado mil veces... porque me recuerda a ti"</p>
+    <button onclick="mostrarSeccion('disculpas')">Descubre mi sorpresa</button>
   </div>
 
-  <!-- SECCIÓN DISULPAS -->
+  <!-- SECCIÓN DE MENSAJE -->
   <div id="disculpas" class="seccion">
-    <div class="corazon">💗</div>
-    <h2>bb quiero decirte...</h2>
-    <p>Lamento cada mal momento, cada palabra dura, cada duda y cada molestia. "Sorry" Sabes que eres muy importante para mi &lt;3.</p>
-    <button onclick="mostrarSeccion('fotos')">Mira unas fotitos nuestras &lt;3</button>
+    <div class="corazon">💜</div>
+    <h2 style="color: var(--morado-accent);">Mi amor...</h2>
+    <p style="font-size: 1.1em;">Cada día a tu lado es como un atardecer morado: hermoso, cálido y lleno de magia. Lamento cualquier sombra que haya opacado nuestro cielo.</p>
+    <button onclick="mostrarSeccion('fotos')">Nuestros momentos</button>
   </div>
 
   <!-- GALERÍA -->
   <div id="fotos" class="seccion">
-    <h2>Momentos que atesoro enserio :</h2>
-    <img src="https://imgbb.com/FOTO1.jpg" width="80%" style="border-radius: 10px; margin: 10px;">
-    <button onclick="lanzarConfeti()">¿Aceptas mi corazóncito 🥹?</button>
+    <h2 style="color: var(--morado-accent);">Memorias en tonos morados</h2>
+    <div class="galeria">
+      <img src="https://i.ibb.co/your-image1.jpg" alt="Nuestro momento 1">
+      <img src="https://i.ibb.co/your-image2.jpg" alt="Nuestro momento 2">
+      <img src="https://i.ibb.co/your-image3.jpg" alt="Nuestro momento 3">
+      <img src="https://i.ibb.co/your-image4.jpg" alt="Nuestro momento 4">
+    </div>
+    <button onclick="lanzarConfeti()">¿Aceptas este ramo digital? 💐</button>
   </div>
 
-  <!-- CARTA QUE SE ABRE -->
-  <button 
-    onclick="document.getElementById('carta').style.transform = 'rotateX(0deg)'; document.getElementById('carta').style.opacity = '1'" 
-    style="background: #ff6b6b; color: white; border: none; padding: 10px 20px; border-radius: 50px; margin: 20px;"
-  >
-    🌟 Abrir mi carta secreta
+  <!-- CARTA SECRETA -->
+  <button onclick="abrirCarta()" style="background: var(--morado-accent); margin: 40px auto;">
+    ✨ Carta Especial
   </button>
 
   <div id="carta">
-    <h3>Para ti mi amor:</h3>
-    <p>Llevamos <span id="dias-juntos"></span> días creando nuestra historia 💗</p>
-    <p style="color: white; user-select: all;">(Selecciona este texto para un secreto...)</p>
+    <h3 style="color: var(--morado-accent); border-bottom: 2px dashed var(--morado-oscuro); padding-bottom: 10px;">Para la dueña de mi corazón</h3>
+    <p>Hoy cumplimos <span id="dias-juntos" style="font-weight:bold; color: var(--morado-accent);">0</span> días de crear una historia que merece ser contada en los tonos más hermosos del morado.</p>
+    <p style="background: var(--morado-principal); padding: 15px; border-radius: 10px; margin-top: 20px;">Seleccióname para descubrir un secreto... 💜</p>
   </div>
 
   <script>
-    function mostrarSeccion(id) {
-      document.getElementById(id).style.display = 'block';
+    // Música de fondo
+    const musica = document.getElementById('musica');
+    let musicaEncendida = true;
+    
+    function controlarMusica() {
+      const boton = document.querySelector('button[onclick="controlarMusica()"]');
+      if (musicaEncendida) {
+        musica.pause();
+        boton.innerHTML = '♫ Reproducir';
+        musicaEncendida = false;
+      } else {
+        musica.play();
+        boton.innerHTML = '♫ Pausar';
+        musicaEncendida = true;
+      }
     }
     
+    // Mostrar secciones con scroll suave
+    function mostrarSeccion(id) {
+      const seccion = document.getElementById(id);
+      seccion.style.display = 'block';
+      seccion.scrollIntoView({ behavior: 'smooth' });
+    }
+    
+    // Efecto de confeti morado
     function lanzarConfeti() {
       const jsConfetti = new JSConfetti();
       jsConfetti.addConfetti({
-        emojis: ['💗', '🌷', '💍', '🍃'],
+        emojis: ['💜', '🟣', '👾', '🌂', '🍆', '☂️'],
         emojiSize: 30,
-        confettiNumber: 100,
+        confettiNumber: 200,
       });
+      
+      // Mensaje flotante
+      setTimeout(() => {
+        const mensaje = document.createElement('div');
+        mensaje.innerHTML = '¡TE AMO! 💜';
+        mensaje.style.position = 'fixed';
+        mensaje.style.top = '50%';
+        mensaje.style.left = '50%';
+        mensaje.style.transform = 'translate(-50%, -50%)';
+        mensaje.style.fontSize = '2em';
+        mensaje.style.color = 'white';
+        mensaje.style.backgroundColor = 'var(--morado-accent)';
+        mensaje.style.padding = '15px 30px';
+        mensaje.style.borderRadius = '50px';
+        mensaje.style.zIndex = '1000';
+        mensaje.style.boxShadow = '0 10px 30px rgba(179, 153, 212, 0.5)';
+        mensaje.style.animation = 'flotar 3s ease-out forwards';
+        
+        document.body.appendChild(mensaje);
+        
+        setTimeout(() => {
+          mensaje.remove();
+        }, 3000);
+      }, 800);
     }
     
-    // Calcula días juntos
-    const inicio = new Date('2023-06-01'); // CAMBIA ESTA FECHA
+    // Animación para carta
+    function abrirCarta() {
+      const carta = document.getElementById('carta');
+      carta.style.transform = 'rotateX(0deg)';
+      carta.style.opacity = '1';
+      carta.scrollIntoView({ behavior: 'smooth' });
+    }
+    
+    // Calculadora de días juntos
+    const inicio = new Date('2023-06-01'); // CAMBIA LA FECHA
     const hoy = new Date();
     const dias = Math.floor((hoy - inicio) / (1000 * 60 * 60 * 24));
     document.getElementById('dias-juntos').textContent = dias;
+    
+    // Permitir reproducción de música después de interacción
+    document.addEventListener('click', function() {
+      musica.play().catch(e => console.log("Reproducción automática bloqueada:", e));
+    }, { once: true });
   </script>
   
   <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
