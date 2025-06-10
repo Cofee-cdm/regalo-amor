@@ -123,19 +123,6 @@
       box-shadow: 0 12px 25px rgba(187, 143, 206, 0.5);
     }
 
-    #carta {
-      transform: rotateX(90deg);
-      opacity: 0;
-      transition: all 0.8s ease;
-      background: rgba(31, 16, 46, 0.9);
-      padding: 30px;
-      border-radius: 15px;
-      max-width: 80%;
-      margin: 30px auto;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-      border-top: 3px solid var(--morado-claro);
-    }
-
     ::selection {
       background: var(--morado-claro);
       color: var(--morado-oscuro);
@@ -172,9 +159,10 @@
   </style>
 </head>
 <body>
+
   <!-- 🎵 AUDIO -->
   <audio id="musica" loop>
-    <source src="https://tu-enlace-directo.mp3" type="audio/mpeg">
+    <source src="rises-the-moon.mp3" type="audio/mpeg">
     Tu navegador no soporta audio HTML5.
   </audio>
 
@@ -190,7 +178,7 @@
     <p style="font-size: 1.3em; max-width: 80%; margin: 0 auto 30px;">
       "Como la luna que siempre vuelve a levantarse, prometo ser mejor para ti..."
     </p>
-    <button onclick="mostrarSeccion('disculpas')">Ver mi mensaje</button>
+    <button onclick="iniciarDisculpas()">Ver mi mensaje</button>
   </div>
 
   <!-- 💬 MENSAJE DE DISCULPAS -->
@@ -208,7 +196,6 @@
   <div id="fotos" class="seccion">
     <h2 style="color: var(--morado-claro);">Nuestros Momentos bajo la Luna</h2>
     <div class="galeria">
-      <!-- Agrega tus imágenes aquí -->
       <img src="https://i.ibb.co/example1.jpg" alt="Recuerdo 1">
       <img src="https://i.ibb.co/example2.jpg" alt="Recuerdo 2">
     </div>
@@ -235,6 +222,18 @@
     function mostrarSeccion(id) {
       document.querySelectorAll('.seccion').forEach(sec => sec.style.display = 'none');
       document.getElementById(id).style.display = 'block';
+    }
+
+    function iniciarDisculpas() {
+      mostrarSeccion('disculpas');
+      if (!musicaActiva) {
+        musica.play().then(() => {
+          musicaActiva = true;
+          btnMusica.textContent = '🔊';
+        }).catch(e => {
+          alert("Activa el sonido o toca la pantalla para iniciar la música.");
+        });
+      }
     }
   </script>
 </body>
