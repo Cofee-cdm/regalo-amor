@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Para Ti, Mi Amor ❤️</title>
+  <title>Para Ti, Mi Corazon de Melocoton 💗🌷</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
@@ -18,7 +18,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background-image: url('https://imgbb.com/TU-FOTO.jpg'); /* Cambia esta URL */
+      background-image: url('https://imgbb.com/TU-FOTO.jpg');
       background-size: cover;
       color: white;
       text-shadow: 2px 2px 4px #000;
@@ -47,44 +47,76 @@
       50% { transform: scale(1.2); }
       100% { transform: scale(1); }
     }
+    #carta {
+      transform: rotateX(90deg);
+      opacity: 0;
+      transition: 1s;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 80%;
+      margin: 20px auto;
+    }
   </style>
 </head>
 <body>
   <!-- PORTADA -->
   <div id="portada">
-    <h1 style="font-size: 2.5em;">Para [Su Nombre]</h1>
-    <p style="font-size: 1.2em;">"Aunque la distancia nos separe, mi corazón sigue latiendo por ti..."</p>
-    <button onclick="mostrarSeccion('disculpas')">Toca aquí, mi vida ❤️</button>
+    <h1 style="font-size: 2.5em;">Para Paulitaa 💖</h1>
+    <p style="font-size: 1.2em;">"Amore aunque la distancia nos separe, mi corazon sigue latiendo por ti bb..."</p>
+    <button onclick="mostrarSeccion('disculpas')">Toca aquí, mi vida 💗</button>
   </div>
 
   <!-- SECCIÓN DISULPAS -->
   <div id="disculpas" class="seccion">
-    <div class="corazon">❤️</div>
-    <h2>Quiero decirte...</h2>
-    <p>Lamento cada mal momento, cada palabra dura. Eres lo más valioso en mi vida.</p>
-    <button onclick="mostrarSeccion('fotos')">Ver nuestros recuerdos</button>
+    <div class="corazon">💗</div>
+    <h2>bb quiero decirte...</h2>
+    <p>Lamento cada mal momento, cada palabra dura, cada duda y cada molestia. "Sorry" Sabes que eres muy importante para mi &lt;3.</p>
+    <button onclick="mostrarSeccion('fotos')">Mira unas fotitos nuestras &lt;3</button>
   </div>
 
   <!-- GALERÍA -->
   <div id="fotos" class="seccion">
-    <h2>Momentos que atesoro:</h2>
-    <img src="https://imgbb.com/FOTO1.jpg" width="80%" style="border-radius: 10px; margin: 10px;"> <!-- Añade tus fotos -->
-    <button onclick="lanzarConfeti()">¿Aceptas mi corazón?</button>
+    <h2>Momentos que atesoro enserio :</h2>
+    <img src="https://imgbb.com/FOTO1.jpg" width="80%" style="border-radius: 10px; margin: 10px;">
+    <button onclick="lanzarConfeti()">¿Aceptas mi corazóncito 🥹?</button>
+  </div>
+
+  <!-- CARTA QUE SE ABRE -->
+  <button 
+    onclick="document.getElementById('carta').style.transform = 'rotateX(0deg)'; document.getElementById('carta').style.opacity = '1'" 
+    style="background: #ff6b6b; color: white; border: none; padding: 10px 20px; border-radius: 50px; margin: 20px;"
+  >
+    🌟 Abrir mi carta secreta
+  </button>
+
+  <div id="carta">
+    <h3>Para ti mi amor:</h3>
+    <p>Llevamos <span id="dias-juntos"></span> días creando nuestra historia 💗</p>
+    <p style="color: white; user-select: all;">(Selecciona este texto para un secreto...)</p>
   </div>
 
   <script>
     function mostrarSeccion(id) {
       document.getElementById(id).style.display = 'block';
     }
+    
     function lanzarConfeti() {
       const jsConfetti = new JSConfetti();
       jsConfetti.addConfetti({
-        emojis: ['❤️', '🥰', '💍', '🌈'],
+        emojis: ['💗', '🌷', '💍', '🍃'],
         emojiSize: 30,
         confettiNumber: 100,
       });
     }
+    
+    // Calcula días juntos
+    const inicio = new Date('2023-06-01'); // CAMBIA ESTA FECHA
+    const hoy = new Date();
+    const dias = Math.floor((hoy - inicio) / (1000 * 60 * 60 * 24));
+    document.getElementById('dias-juntos').textContent = dias;
   </script>
+  
   <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
 </body>
 </html>
