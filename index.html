@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Para Ti, Mi Amor ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    #portada {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-image: url('https://imgbb.com/TU-FOTO.jpg'); /* Cambia esta URL */
+      background-size: cover;
+      color: white;
+      text-shadow: 2px 2px 4px #000;
+    }
+    button {
+      background: #ff6b6b;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 50px;
+      margin: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .seccion {
+      padding: 40px 20px;
+      display: none;
+    }
+    .corazon {
+      font-size: 40px;
+      animation: latir 1s infinite;
+    }
+    @keyframes latir {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <!-- PORTADA -->
+  <div id="portada">
+    <h1 style="font-size: 2.5em;">Para [Su Nombre]</h1>
+    <p style="font-size: 1.2em;">"Aunque la distancia nos separe, mi corazón sigue latiendo por ti..."</p>
+    <button onclick="mostrarSeccion('disculpas')">Toca aquí, mi vida ❤️</button>
+  </div>
+
+  <!-- SECCIÓN DISULPAS -->
+  <div id="disculpas" class="seccion">
+    <div class="corazon">❤️</div>
+    <h2>Quiero decirte...</h2>
+    <p>Lamento cada mal momento, cada palabra dura. Eres lo más valioso en mi vida.</p>
+    <button onclick="mostrarSeccion('fotos')">Ver nuestros recuerdos</button>
+  </div>
+
+  <!-- GALERÍA -->
+  <div id="fotos" class="seccion">
+    <h2>Momentos que atesoro:</h2>
+    <img src="https://imgbb.com/FOTO1.jpg" width="80%" style="border-radius: 10px; margin: 10px;"> <!-- Añade tus fotos -->
+    <button onclick="lanzarConfeti()">¿Aceptas mi corazón?</button>
+  </div>
+
+  <script>
+    function mostrarSeccion(id) {
+      document.getElementById(id).style.display = 'block';
+    }
+    function lanzarConfeti() {
+      const jsConfetti = new JSConfetti();
+      jsConfetti.addConfetti({
+        emojis: ['❤️', '🥰', '💍', '🌈'],
+        emojiSize: 30,
+        confettiNumber: 100,
+      });
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+</body>
+</html>
