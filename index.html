@@ -186,17 +186,19 @@
     <p style="font-size: 1.3em; max-width: 80%; margin: 0 auto 30px;">
       "Te lo dedico con mucho amor 🥹..."
     </p>
-    <button onclick="Venacompañamecielo!<()">Ven acompañame cielo!!</button>
+    <button onclick="verMensaje()">Ven, acompáñame cielo!!</button>
   </div>
 
   <div id="disculpas" class="seccion">
     <div class="corazon">💜</div>
-    <h2 style="color: var(--morado-claro);">Mi corazon de melocoton 🥹 queria decirte que ...</h2>
+    <h2 style="color: var(--morado-claro);">Mi corazón de melocotón 🥹 quería decirte que ...</h2>
     <p style="font-size: 1.1em; line-height: 1.8;">
-      "BB, gracias infinitamente por acompañarme en cada momento, siempre lo recordare con la mojor impresion!<b>I loviu forecver</b>. 
-      Te aprecio, quiero, te adoro yte amo. "Eres muy especial para mi 🥹"
+      BB, gracias infinitamente por acompañarme en cada momento, siempre lo recordaré con la mejor impresión.  
+      <b>I love you forever</b>.  
+      Te aprecio, quiero, adoro y amo. Eres muy especial para mí 🥹
     </p>
-  <button id="boton-viaje" onclick="verBienvenida()">¿Me acompañas a este hermoso viaje mvda?</button>
+    <button id="boton-viaje" onclick="verBienvenida()">¿Me acompañas a este hermoso viaje, mi vida?</button>
+  </div>
 
   <div id="bienvenida" class="seccion">
     <p style="font-size: 1.3em;">OH!! Bienvenida cielo, ven acompáñame</p>
@@ -243,8 +245,10 @@
       if (!musicaActiva) controlarMusica();
       setTimeout(() => {
         const mensaje = document.getElementById('mensaje-amor');
-        mensaje.style.display = 'block';
-        setTimeout(() => mensaje.style.opacity = '1', 100);
+        if (mensaje) {
+          mensaje.style.display = 'block';
+          setTimeout(() => mensaje.style.opacity = '1', 100);
+        }
 
         setTimeout(() => {
           const btnViaje = document.getElementById('boton-viaje');
