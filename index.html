@@ -219,69 +219,81 @@
   <div id="seccion-extra" class="seccion hidden fade-in">
     <p class="text-center text-xl mt-4">¿Te acuerdas 🥹, jaja tan bellos</p>
   </div>
-
-  <div id="boton-sigueme" class="floating-box hidden" onclick="mostrarMasFotos()">
-    Ven sígueme
+<!-- Sección adicional de fotos dentro de cuadro morado -->
+<section id="fotos-extra" class="hidden transition-opacity duration-1000 opacity-0">
+  <div class="bg-purple-200 p-4 rounded-2xl mt-10 flex flex-wrap justify-center gap-4">
+    <img src="foto4.jpg" class="w-40 rounded-xl shadow-md" />
+    <img src="foto5.jpg" class="w-40 rounded-xl shadow-md" />
+    <img src="foto6.jpg" class="w-40 rounded-xl shadow-md" />
   </div>
+</section>
 
-  <div id="mas-fotos" class="hidden fade-in">
-    <div class="image-container">
-      <img src="img/foto3.jpg" alt="foto3" class="rounded-xl shadow-xl w-full max-w-md mx-auto my-4">
-      <img src="img/foto4.jpg" alt="foto4" class="rounded-xl shadow-xl w-full max-w-md mx-auto my-4">
-    </div>
-    <p class="text-center text-xl mt-2">Miraaa más fotos JAJA</p>
-  </div>
+<!-- Primer botón -->
+<div id="btn1-container" class="flex justify-center mt-10 hidden">
+  <button id="btn1" class="animate-pulse bg-purple-500 text-white font-bold py-2 px-4 rounded-full shadow-lg">
+    Ven, sígueme
+  </button>
+</div>
 
-  <div id="boton-recuerdo" class="floating-box hidden" onclick="irARecuerdo()">
-    ¿Te acuerdas de esto 🥹
-  </div>
+<!-- Segunda sección de imagen -->
+<section id="foto-oculta1" class="hidden flex justify-center mt-10 transition-opacity duration-1000 opacity-0">
+  <img src="foto7.jpg" class="w-60 rounded-xl shadow-lg" />
+</section>
 
-  <div id="foto-recuerdo" class="hidden fade-in mt-6">
-    <img src="img/foto5.jpg" alt="Recuerdo" class="rounded-xl shadow-xl w-full max-w-md mx-auto">
-  </div>
+<!-- Segundo botón -->
+<div id="btn2-container" class="flex justify-center mt-10 hidden">
+  <button id="btn2" class="animate-pulse bg-purple-500 text-white font-bold py-2 px-4 rounded-full shadow-lg">
+    ¡Sigue bajando!
+  </button>
+</div>
 
-  <script>
-    const musica = document.getElementById("musica");
-    const botonMusica = document.getElementById("boton-musica");
-    let sonando = false;
+<!-- Texto final -->
+<section id="texto-final" class="hidden mt-10 text-center text-xl text-purple-700 font-semibold transition-opacity duration-1000 opacity-0">
+  qujegduiaedqwhegd
+</section>
 
-    function controlarMusica() {
-      if (sonando) {
-        musica.pause();
-        botonMusica.textContent = "🎶";
-      } else {
-        musica.play();
-        botonMusica.textContent = "⏸️";
-      }
-      sonando = !sonando;
-    }
+<!-- Tercer botón -->
+<div id="btn3-container" class="flex justify-center mt-10 hidden">
+  <button id="btn3" class="animate-pulse bg-purple-500 text-white font-bold py-2 px-4 rounded-full shadow-lg">
+    Ver último mensaje
+  </button>
+</div>
 
-    function verMensaje() {
-      document.getElementById("disculpas").classList.remove("hidden");
-      document.getElementById("disculpas").scrollIntoView({ behavior: "smooth" });
-    }
+<!-- Script animaciones -->
+<script>
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.getElementById('btn1-container').classList.remove('hidden');
+      document.getElementById('btn1-container').scrollIntoView({ behavior: 'smooth' });
+    }, 1500); // Espera 1.5s para bajar a mostrar el botón
 
-    function verBienvenida() {
-      document.getElementById("bienvenida").classList.remove("hidden");
-      document.getElementById("imagenes-extra").classList.remove("hidden");
-      document.getElementById("bienvenida").scrollIntoView({ behavior: "smooth" });
+    document.getElementById('btn1').addEventListener('click', () => {
+      document.getElementById('fotos-extra').classList.remove('hidden');
+      document.getElementById('fotos-extra').classList.add('opacity-100');
+      document.getElementById('fotos-extra').scrollIntoView({ behavior: 'smooth' });
 
       setTimeout(() => {
-        document.getElementById("seccion-extra").classList.remove("hidden");
-        document.getElementById("boton-sigueme").classList.remove("hidden");
-      }, 3000);
-    }
+        document.getElementById('btn2-container').classList.remove('hidden');
+        document.getElementById('btn2-container').scrollIntoView({ behavior: 'smooth' });
+      }, 5000); // Espera 5 segundos
+    });
 
-    function mostrarMasFotos() {
-      document.getElementById("mas-fotos").classList.remove("hidden");
-      document.getElementById("boton-recuerdo").classList.remove("hidden");
-      document.getElementById("mas-fotos").scrollIntoView({ behavior: "smooth" });
-    }
+    document.getElementById('btn2').addEventListener('click', () => {
+      document.getElementById('foto-oculta1').classList.remove('hidden');
+      document.getElementById('foto-oculta1').classList.add('opacity-100');
+      document.getElementById('foto-oculta1').scrollIntoView({ behavior: 'smooth' });
 
-    function irARecuerdo() {
-      document.getElementById("foto-recuerdo").classList.remove("hidden");
-      document.getElementById("foto-recuerdo").scrollIntoView({ behavior: "smooth" });
-    }
-  </script>
-</body>
-</html>
+      setTimeout(() => {
+        document.getElementById('btn3-container').classList.remove('hidden');
+        document.getElementById('btn3-container').scrollIntoView({ behavior: 'smooth' });
+      }, 6000); // Espera 6 segundos
+    });
+
+    document.getElementById('btn3').addEventListener('click', () => {
+      document.getElementById('texto-final').classList.remove('hidden');
+      document.getElementById('texto-final').classList.add('opacity-100');
+      document.getElementById('texto-final').scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+
