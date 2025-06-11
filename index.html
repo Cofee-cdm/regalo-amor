@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -69,6 +69,7 @@
       transition: all 0.3s ease;
       font-weight: 600;
       letter-spacing: 1px;
+      animation: latir 1.8s infinite;
     }
 
     button:hover {
@@ -197,13 +198,13 @@
 
   <div id="disculpas" class="seccion hidden">
     <div class="corazon">💜</div>
-    <h2 style="color: var(--morado-claro);">Mi corazón de melocotón 🥹 quería decirte que ...</h2>
+    <h2 style="color: var(--morado-claro);">Mi corazón de melocotón   quería decirte que ...</h2>
     <p style="font-size: 1.1em; line-height: 1.8;">
       BB, gracias infinitamente por acompañarme en cada momento, siempre lo recordaré con la mejor impresión.  
       <b>I love you forever</b>.  
       Te aprecio, quiero, adoro y amo. Eres muy especial para mí 🥹
     </p>
-    <button id="boton-viaje" onclick="verBienvenida()">¿Me acompañas a este hermoso viaje, mi vida?</button>
+   <button id="boton-viaje" onclick="verBienvenida()">¿Me acompañas a este hermoso viaje, mi vida?</button>
   </div>
 
   <div id="bienvenida" class="seccion hidden">
@@ -215,22 +216,27 @@
       <img src="https://i.ibb.co/example3.jpg" alt="Recuerdo 3">
       <img src="https://i.ibb.co/example4.jpg" alt="Recuerdo 4">
     </div>
-  </div>
 
   <div id="seccion-extra" class="seccion hidden fade-in">
     <p class="text-center text-xl mt-4">¿Te acuerdas 🥹, jaja tan bellos?</p>
+
+     <div id="btn1-container" class="flex justify-center mt-10 hidden">
+       
+      <button id="btn1" class="animate-pulse bg-purple-500 text-white font-bold py-2 px-4 rounded-full shadow-lg">
+        Ven, sígueme
+      </button>
+    </div>
 
     <section id="fotos-extra" class="hidden transition-opacity duration-1000 opacity-0">
       <div class="bg-purple-200 p-4 rounded-2xl mt-10 flex flex-wrap justify-center gap-4">
         <img src="foto4.jpg" class="w-40 rounded-xl shadow-md" />
         <img src="foto5.jpg" class="w-40 rounded-xl shadow-md" />
-        <img src="foto6.jpg" class="w-40 rounded-xl shadow-md" />
       </div>
     </section>
 
-    <div id="btn1-container" class="flex justify-center mt-10 hidden">
-      <button id="btn1" class="animate-pulse bg-purple-500 text-white font-bold py-2 px-4 rounded-full shadow-lg">
-        Ven, sígueme
+    <div id="btn2-container" class="flex justify-center mt-10 hidden">
+      <button id="btn2" class="animate-pulse bg-purple-500 text-white font-bold py-2 px-4 rounded-full shadow-lg">
+        ¡Te acuerdas 🥹!
       </button>
     </div>
 
@@ -238,23 +244,17 @@
       <img src="foto7.jpg" class="w-60 rounded-xl shadow-lg" />
     </section>
 
-    <div id="btn2-container" class="flex justify-center mt-10 hidden">
-      <button id="btn2" class="animate-pulse bg-purple-500 text-white font-bold py-2 px-4 rounded-full shadow-lg">
-        ¡Sigue bajando!
+    <div id="btn3-container" class="flex justify-center mt-10 hidden">
+      <button id="btn3" class="animate-pulse bg-purple-500 text-white font-bold py-2 px-4 rounded-full shadow-lg">
+        Te queria decir esto bb
       </button>
     </div>
-
+    
     <section id="texto-final" class="hidden mt-10 text-center text-xl text-purple-700 font-semibold transition-opacity duration-1000 opacity-0">
       qujegduiaedqwhegd
     </section>
 
-    <div id="btn3-container" class="flex justify-center mt-10 hidden">
-      <button id="btn3" class="animate-pulse bg-purple-500 text-white font-bold py-2 px-4 rounded-full shadow-lg">
-        Ver último mensaje
-      </button>
-    </div>
-  </div>
-
+   
   <script>
     function controlarMusica() {
       const musica = document.getElementById('musica');
