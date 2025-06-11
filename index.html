@@ -1,277 +1,153 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Para ti, Mi Corazón de Melocotón 💗🌷</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Para mi niña hermosa 💜</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --morado-oscuro: #6a3093;
-      --morado-medio: #8e44ad;
-      --morado-claro: #bb8fce;
-      --texto: #f5eef8;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
-      font-family: 'Arial', sans-serif;
-      text-align: center;
-      background: linear-gradient(135deg, var(--morado-oscuro), var(--morado-medio));
       margin: 0;
       padding: 0;
-      color: var(--texto);
-      min-height: 100vh;
-      line-height: 1.6;
+      background: linear-gradient(to bottom right, #5e4b8b, #b084cc);
+      font-family: 'Pacifico', cursive;
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
     }
 
-    #portada {
-      height: 100vh;
+    h1 {
+      font-size: 3em;
+      margin-top: 50px;
+      animation: fadeInDown 2s ease-in-out;
+    }
+
+    p {
+      font-size: 1.5em;
+      margin: 20px;
+      animation: fadeInUp 2s ease-in-out;
+    }
+
+    .heart {
+      width: 100px;
+      height: 90px;
+      background: red;
+      position: relative;
+      display: inline-block;
+      margin-top: 20px;
+      animation: pulse 1.5s infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      width: 100px;
+      height: 90px;
+      background: red;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .heart::before {
+      top: -50px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 50px;
+      top: 0;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .button {
+      margin-top: 40px;
+      background-color: white;
+      color: #5e4b8b;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1em;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #f4e1ff;
+    }
+
+    .image-container {
+      margin-top: 40px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      background: linear-gradient(rgba(106, 48, 147, 0.7), rgba(106, 48, 147, 0.7)), url('https://i.ibb.co/your-image.jpg');
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    #portada::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: radial-gradient(circle at 20% 30%, rgba(187, 143, 206, 0.3) 1px, transparent 1px),
-                  radial-gradient(circle at 80% 70%, rgba(187, 143, 206, 0.3) 1px, transparent 1px);
-      background-size: 50px 50px;
-      z-index: 0;
-    }
-
-    #portada > * {
-      position: relative;
-      z-index: 1;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    }
-
-    button {
-      background: var(--morado-medio);
-      color: white;
-      border: 2px solid var(--morado-claro);
-      padding: 14px 32px;
-      font-size: 16px;
-      border-radius: 50px;
-      margin: 15px;
-      cursor: pointer;
-      box-shadow: 0 4px 15px rgba(142, 68, 173, 0.5);
-      transition: all 0.3s ease;
-      font-weight: 600;
-      letter-spacing: 1px;
-    }
-
-    button:hover {
-      background: var(--morado-claro);
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(187, 143, 206, 0.7);
-    }
-
-    .seccion {
-      padding: 40px;
-      background: rgba(31, 16, 46, 0.8);
-      margin: 30px auto;
-      border-radius: 20px;
-      max-width: 800px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(5px);
-      border: 1px solid var(--morado-medio);
-    }
-
-    .corazon {
-      font-size: 50px;
-      animation: latir 1.5s infinite;
-      margin: 20px 0;
-      color: var(--morado-claro);
-      text-shadow: 0 0 15px rgba(187, 143, 206, 0.7);
-    }
-
-    @keyframes latir {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.2); }
-      100% { transform: scale(1); }
-    }
-
-    .galeria {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: 20px;
-      margin: 30px 0;
     }
 
-    .galeria img {
-      width: 100%;
-      height: 200px;
-      border-radius: 12px;
-      object-fit: cover;
-      border: 2px solid var(--morado-medio);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    .image-container img {
+      width: 80%;
+      max-width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
     }
 
-    .galeria img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 12px 25px rgba(187, 143, 206, 0.5);
-    }
-
-    #luna-final {
-      margin-top: 50px;
-      animation: brillar 4s ease-in-out infinite;
-    }
-
-    @keyframes brillar {
-      0%, 100% { transform: scale(1); filter: brightness(1); }
-      50% { transform: scale(1.1); filter: brightness(1.4); }
-    }
-
-    #control-musica {
+    .music-note {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      z-index: 1000;
-      background: rgba(142, 68, 173, 0.7);
-      border-radius: 50%;
-      padding: 15px;
-      animation: flotar 3s ease-in-out infinite;
-      box-shadow: 0 0 20px rgba(187, 143, 206, 0.8);
-    }
-
-    @keyframes flotar {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    #control-musica button {
-      background: none;
-      border: none;
-      color: white;
-      font-size: 22px;
-      cursor: pointer;
-    }
-
-    #mensaje-amor, #boton-viaje, #bienvenida, #imagenes-extra {
-      display: none;
-      opacity: 0;
-      transition: opacity 1.5s ease;
-    }
-
-    #boton-viaje {
-      animation: latir 1.5s infinite;
-      margin-top: 20px;
+      font-size: 2em;
+      animation: pulse 2s infinite;
+      opacity: 0.7;
     }
   </style>
 </head>
 <body>
-  <audio id="musica" loop>
-    <source src="rises-the-moon.mp3" type="audio/mpeg">
-    Tu navegador no soporta audio HTML5.
-  </audio>
+  <h1>Para ti mi niña hermosa 💜</h1>
+  <p>Quise hacerte algo especial, una pequeña sorpresa con mucho cariño.</p>
+  <div class="heart"></div>
+  <p>Gracias por ser parte de mi vida, por cada momento, por cada sonrisa.</p>
+  <button class="button" onclick="document.getElementById('cancion').play()">Toca aquí mi amor 💜</button>
 
-  <div id="control-musica">
-    <button onclick="controlarMusica()" id="boton-musica">🎶</button>
+  <audio id="cancion" src="rises-the-moon.mp3"></audio>
+
+  <div class="image-container">
+    <img src="WhatsApp Image 2025-06-10 at 7.49.53 PM (1).jpeg" alt="Imagen 1">
+    <img src="WhatsApp Image 2025-06-10 at 7.49.53 PM.jpeg" alt="Imagen 2">
   </div>
 
-  <div id="portada">
-    <h1 style="font-size: 3em; margin-bottom: 20px;">Para ti, Mi Corazón de Melocotón 💗🌷</h1>
-    <p style="font-size: 1.3em; max-width: 80%; margin: 0 auto 30px;">
-      "Te lo dedico con mucho amor 🥹..."
-    </p>
-    <button onclick="verMensaje()">Ven, acompáñame cielo!!</button>
-  </div>
-
-  <div id="disculpas" class="seccion">
-    <div class="corazon">💜</div>
-    <h2 style="color: var(--morado-claro);">Mi corazón de melocotón 🥹 quería decirte que ...</h2>
-    <p style="font-size: 1.1em; line-height: 1.8;">
-      BB, gracias infinitamente por acompañarme en cada momento, siempre lo recordaré con la mejor impresión.  
-      <b>I love you forever</b>.  
-      Te aprecio, quiero, adoro y amo. Eres muy especial para mí 🥹
-    </p>
-    <button id="boton-viaje" onclick="verBienvenida()">¿Me acompañas a este hermoso viaje, mi vida?</button>
-  </div>
-
-  <div id="bienvenida" class="seccion">
-    <p style="font-size: 1.3em;">OH!! Bienvenida cielo, ven acompáñame</p>
-  </div>
-
-  <div id="imagenes-extra" class="seccion">
-    <div class="galeria">
-      <img src="https://i.ibb.co/example3.jpg" alt="Recuerdo 3">
-      <img src="https://i.ibb.co/example4.jpg" alt="Recuerdo 4">
-    </div>
-  </div>
-
-  <div class="seccion">
-    <h2 style="color: var(--morado-claro);">Nuestros Momentos bajo la Luna</h2>
-    <div class="galeria">
-      <img src="https://i.ibb.co/example1.jpg" alt="Recuerdo 1">
-      <img src="https://i.ibb.co/example2.jpg" alt="Recuerdo 2">
-    </div>
-    <div id="luna-final">
-      <img src="https://i.ibb.co/3R6kZX5/luna.png" alt="Luna mágica" width="100">
-    </div>
-  </div>
-
-  <script>
-    const musica = document.getElementById('musica');
-    const btnMusica = document.getElementById('boton-musica');
-    let musicaActiva = false;
-
-    function controlarMusica() {
-      if (!musicaActiva) {
-        musica.play().then(() => {
-          musicaActiva = true;
-          btnMusica.textContent = '🔊';
-        }).catch(() => alert("Toca la pantalla para activar el sonido"));
-      } else {
-        musica.pause();
-        musicaActiva = false;
-        btnMusica.textContent = '🎶';
-      }
-    }
-
-    function verMensaje() {
-      document.getElementById('disculpas').scrollIntoView({ behavior: 'smooth' });
-      if (!musicaActiva) controlarMusica();
-      setTimeout(() => {
-        const mensaje = document.getElementById('mensaje-amor');
-        if (mensaje) {
-          mensaje.style.display = 'block';
-          setTimeout(() => mensaje.style.opacity = '1', 100);
-        }
-
-        setTimeout(() => {
-          const btnViaje = document.getElementById('boton-viaje');
-          btnViaje.style.display = 'inline-block';
-          setTimeout(() => btnViaje.style.opacity = '1', 100);
-        }, 6000);
-      }, 1000);
-    }
-
-    function verBienvenida() {
-      document.getElementById('bienvenida').scrollIntoView({ behavior: 'smooth' });
-      setTimeout(() => {
-        const bienvenida = document.getElementById('bienvenida');
-        bienvenida.style.display = 'block';
-        setTimeout(() => bienvenida.style.opacity = '1', 100);
-        setTimeout(() => {
-          const imagenes = document.getElementById('imagenes-extra');
-          imagenes.style.display = 'block';
-          setTimeout(() => imagenes.scrollIntoView({ behavior: 'smooth' }), 500);
-          setTimeout(() => imagenes.style.opacity = '1', 100);
-        }, 3000);
-      }, 100);
-    }
-  </script>
+  <div class="music-note">♪</div>
 </body>
 </html>
