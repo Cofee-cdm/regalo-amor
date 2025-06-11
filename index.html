@@ -124,14 +124,30 @@
       box-shadow: 0 12px 25px rgba(187, 143, 206, 0.5);
     }
 
-    #luna-final {
-      margin-top: 50px;
-      animation: brillar 4s ease-in-out infinite;
+    .hidden { display: none; }
+    .fade-in { animation: fadeIn 1s ease-in forwards; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
-    @keyframes brillar {
-      0%, 100% { transform: scale(1); filter: brightness(1); }
-      50% { transform: scale(1.1); filter: brightness(1.4); }
+    .floating-box {
+      position: relative;
+      background-color: #a78bfa;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 1.5rem;
+      text-align: center;
+      width: fit-content;
+      margin: 2rem auto;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .floating-box:hover {
+      transform: scale(1.05);
     }
 
     #control-musica {
@@ -158,17 +174,6 @@
       font-size: 22px;
       cursor: pointer;
     }
-
-    #mensaje-amor, #boton-viaje, #bienvenida, #imagenes-extra {
-      display: none;
-      opacity: 0;
-      transition: opacity 1.5s ease;
-    }
-
-    #boton-viaje {
-      animation: latir 1.5s infinite;
-      margin-top: 20px;
-    }
   </style>
 </head>
 <body>
@@ -189,7 +194,7 @@
     <button onclick="verMensaje()">Ven, acompáñame cielo!!</button>
   </div>
 
-  <div id="disculpas" class="seccion">
+  <div id="disculpas" class="seccion hidden">
     <div class="corazon">💜</div>
     <h2 style="color: var(--morado-claro);">Mi corazón de melocotón 🥹 quería decirte que ...</h2>
     <p style="font-size: 1.1em; line-height: 1.8;">
@@ -200,77 +205,82 @@
     <button id="boton-viaje" onclick="verBienvenida()">¿Me acompañas a este hermoso viaje, mi vida?</button>
   </div>
 
-  <div id="bienvenida" class="seccion">
+  <div id="bienvenida" class="seccion hidden">
     <p style="font-size: 1.3em;">OH!! Bienvenida cielo, ven acompáñame</p>
   </div>
 
-  <div id="imagenes-extra" class="seccion">
+  <div id="imagenes-extra" class="seccion hidden">
     <div class="galeria">
       <img src="https://i.ibb.co/example3.jpg" alt="Recuerdo 3">
       <img src="https://i.ibb.co/example4.jpg" alt="Recuerdo 4">
     </div>
   </div>
 
-  <div class="seccion">
-    <h2 style="color: var(--morado-claro);">Nuestros Momentos bajo la Luna</h2>
-    <div class="galeria">
-      <img src="https://i.ibb.co/example1.jpg" alt="Recuerdo 1">
-      <img src="https://i.ibb.co/example2.jpg" alt="Recuerdo 2">
+  <div id="seccion-extra" class="seccion hidden fade-in">
+    <p class="text-center text-xl mt-4">¿Te acuerdas 🥹, jaja tan bellos</p>
+  </div>
+
+  <div id="boton-sigueme" class="floating-box hidden" onclick="mostrarMasFotos()">
+    Ven sígueme
+  </div>
+
+  <div id="mas-fotos" class="hidden fade-in">
+    <div class="image-container">
+      <img src="img/foto3.jpg" alt="foto3" class="rounded-xl shadow-xl w-full max-w-md mx-auto my-4">
+      <img src="img/foto4.jpg" alt="foto4" class="rounded-xl shadow-xl w-full max-w-md mx-auto my-4">
     </div>
-    <div id="luna-final">
-      <img src="https://i.ibb.co/3R6kZX5/luna.png" alt="Luna mágica" width="100">
-    </div>
+    <p class="text-center text-xl mt-2">Miraaa más fotos JAJA</p>
+  </div>
+
+  <div id="boton-recuerdo" class="floating-box hidden" onclick="irARecuerdo()">
+    ¿Te acuerdas de esto 🥹
+  </div>
+
+  <div id="foto-recuerdo" class="hidden fade-in mt-6">
+    <img src="img/foto5.jpg" alt="Recuerdo" class="rounded-xl shadow-xl w-full max-w-md mx-auto">
   </div>
 
   <script>
-    const musica = document.getElementById('musica');
-    const btnMusica = document.getElementById('boton-musica');
-    let musicaActiva = false;
+    const musica = document.getElementById("musica");
+    const botonMusica = document.getElementById("boton-musica");
+    let sonando = false;
 
     function controlarMusica() {
-      if (!musicaActiva) {
-        musica.play().then(() => {
-          musicaActiva = true;
-          btnMusica.textContent = '🔊';
-        }).catch(() => alert("Toca la pantalla para activar el sonido"));
-      } else {
+      if (sonando) {
         musica.pause();
-        musicaActiva = false;
-        btnMusica.textContent = '🎶';
+        botonMusica.textContent = "🎶";
+      } else {
+        musica.play();
+        botonMusica.textContent = "⏸️";
       }
+      sonando = !sonando;
     }
 
     function verMensaje() {
-      document.getElementById('disculpas').scrollIntoView({ behavior: 'smooth' });
-      if (!musicaActiva) controlarMusica();
-      setTimeout(() => {
-        const mensaje = document.getElementById('mensaje-amor');
-        if (mensaje) {
-          mensaje.style.display = 'block';
-          setTimeout(() => mensaje.style.opacity = '1', 100);
-        }
-
-        setTimeout(() => {
-          const btnViaje = document.getElementById('boton-viaje');
-          btnViaje.style.display = 'inline-block';
-          setTimeout(() => btnViaje.style.opacity = '1', 100);
-        }, 6000);
-      }, 1000);
+      document.getElementById("disculpas").classList.remove("hidden");
+      document.getElementById("disculpas").scrollIntoView({ behavior: "smooth" });
     }
 
     function verBienvenida() {
-      document.getElementById('bienvenida').scrollIntoView({ behavior: 'smooth' });
+      document.getElementById("bienvenida").classList.remove("hidden");
+      document.getElementById("imagenes-extra").classList.remove("hidden");
+      document.getElementById("bienvenida").scrollIntoView({ behavior: "smooth" });
+
       setTimeout(() => {
-        const bienvenida = document.getElementById('bienvenida');
-        bienvenida.style.display = 'block';
-        setTimeout(() => bienvenida.style.opacity = '1', 100);
-        setTimeout(() => {
-          const imagenes = document.getElementById('imagenes-extra');
-          imagenes.style.display = 'block';
-          setTimeout(() => imagenes.scrollIntoView({ behavior: 'smooth' }), 500);
-          setTimeout(() => imagenes.style.opacity = '1', 100);
-        }, 3000);
-      }, 100);
+        document.getElementById("seccion-extra").classList.remove("hidden");
+        document.getElementById("boton-sigueme").classList.remove("hidden");
+      }, 3000);
+    }
+
+    function mostrarMasFotos() {
+      document.getElementById("mas-fotos").classList.remove("hidden");
+      document.getElementById("boton-recuerdo").classList.remove("hidden");
+      document.getElementById("mas-fotos").scrollIntoView({ behavior: "smooth" });
+    }
+
+    function irARecuerdo() {
+      document.getElementById("foto-recuerdo").classList.remove("hidden");
+      document.getElementById("foto-recuerdo").scrollIntoView({ behavior: "smooth" });
     }
   </script>
 </body>
