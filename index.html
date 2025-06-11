@@ -1,98 +1,280 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Para mi amor</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <title>Para ti, Mi Corazón de Melocotón 💗🌷</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    :root {
+      --morado-oscuro: #6a3093;
+      --morado-medio: #8e44ad;
+      --morado-claro: #bb8fce;
+      --texto: #f5eef8;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      background: linear-gradient(to right, #a18cd1, #fbc2eb);
-      font-family: 'Great Vibes', cursive;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background: linear-gradient(135deg, var(--morado-oscuro), var(--morado-medio));
+      margin: 0;
+      padding: 0;
+      color: var(--texto);
+      min-height: 100vh;
+      line-height: 1.6;
     }
-    .heart {
-      animation: beat 1s infinite;
+
+    #portada {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(rgba(106, 48, 147, 0.7), rgba(106, 48, 147, 0.7)), url('https://i.ibb.co/your-image.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
     }
-    @keyframes beat {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.3); }
+
+    #portada::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(187, 143, 206, 0.3) 1px, transparent 1px),
+                  radial-gradient(circle at 80% 70%, rgba(187, 143, 206, 0.3) 1px, transparent 1px);
+      background-size: 50px 50px;
+      z-index: 0;
     }
-    .fade-in {
-      animation: fadeIn 2s ease-in forwards;
+
+    #portada > * {
+      position: relative;
+      z-index: 1;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    button {
+      background: var(--morado-medio);
+      color: white;
+      border: 2px solid var(--morado-claro);
+      padding: 14px 32px;
+      font-size: 16px;
+      border-radius: 50px;
+      margin: 15px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(142, 68, 173, 0.5);
+      transition: all 0.3s ease;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    button:hover {
+      background: var(--morado-claro);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(187, 143, 206, 0.7);
+    }
+
+    .seccion {
+      padding: 40px;
+      background: rgba(31, 16, 46, 0.8);
+      margin: 30px auto;
+      border-radius: 20px;
+      max-width: 800px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(5px);
+      border: 1px solid var(--morado-medio);
+    }
+
+    .corazon {
+      font-size: 50px;
+      animation: latir 1.5s infinite;
+      margin: 20px 0;
+      color: var(--morado-claro);
+      text-shadow: 0 0 15px rgba(187, 143, 206, 0.7);
+    }
+
+    @keyframes latir {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .galeria img {
+      width: 100%;
+      height: 200px;
+      border-radius: 12px;
+      object-fit: cover;
+      border: 2px solid var(--morado-medio);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .galeria img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 25px rgba(187, 143, 206, 0.5);
+    }
+
+    #luna-final {
+      margin-top: 50px;
+      animation: brillar 4s ease-in-out infinite;
+    }
+
+    @keyframes brillar {
+      0%, 100% { transform: scale(1); filter: brightness(1); }
+      50% { transform: scale(1.1); filter: brightness(1.4); }
+    }
+
+    #control-musica {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      background: rgba(142, 68, 173, 0.7);
+      border-radius: 50%;
+      padding: 15px;
+      animation: flotar 3s ease-in-out infinite;
+      box-shadow: 0 0 20px rgba(187, 143, 206, 0.8);
+    }
+
+    @keyframes flotar {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    #control-musica button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    #mensaje-amor, #boton-viaje, #bienvenida, #imagenes-extra {
+      display: none;
       opacity: 0;
+      transition: opacity 1.5s ease;
     }
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
-    .animated-button {
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.1); }
+
+    #boton-viaje {
+      animation: latir 1.5s infinite;
+      margin-top: 20px;
     }
   </style>
 </head>
-<body class="text-white text-center min-h-screen flex flex-col justify-center items-center px-4">
+<body>
+  <audio id="musica" loop>
+    <source src="rises-the-moon.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio HTML5.
+  </audio>
 
-  <h1 class="text-4xl md:text-5xl mt-10">Para ti, mi amorcito 💜</h1>
-
-  <!-- Corazones animados -->
-  <div class="flex flex-wrap justify-center gap-4 mt-8">
-    <div class="text-5xl heart">💜</div>
-    <div class="text-5xl heart">💖</div>
-    <div class="text-5xl heart">💜</div>
-    <div class="text-5xl heart">💖</div>
-    <div class="text-5xl heart">💜</div>
+  <div id="control-musica">
+    <button onclick="controlarMusica()" id="boton-musica">🎶</button>
   </div>
 
-  <!-- Botón inicial -->
-  <button id="verMensaje" class="mt-10 bg-purple-700 hover:bg-purple-900 text-white font-bold py-2 px-6 rounded-2xl shadow-lg transition-all">Ver mi mensaje</button>
+  <div id="portada">
+    <h1 style="font-size: 3em; margin-bottom: 20px;">Perdóname, Mi Vida 💜</h1>
+    <p style="font-size: 1.3em; max-width: 80%; margin: 0 auto 30px;">
+      "Como la luna que siempre vuelve a levantarse, prometo ser mejor para ti..."
+    </p>
+    <button onclick="verMensaje()">Ver mi mensaje</button>
+  </div>
 
-  <!-- Frase 1 -->
-  <p id="mensaje1" class="text-xl mt-8 fade-in hidden">Amore aunque la distancia nos impida muchas cosas, mi corabro sigue latiendo por ti bb</p>
+  <div id="disculpas" class="seccion">
+    <div class="corazon">💜</div>
+    <div class="corazon">💜</div>
+    <div class="corazon">💜</div>
+    <h2 style="color: var(--morado-claro);">Mi más sincero perdón...</h2>
+    <p style="font-size: 1.1em; line-height: 1.8;">
+      "BB, lamento cada mal momento, cada palabra dura. No hay excusa que valga, solo <b>el amor inmenso que siento por ti</b>. 
+      Prometo que nuestras próximas lunas serán de paz y cariño. ¿Me das otra oportunidad? 🥹"
+    </p>
+  </div>
 
-  <!-- Botón 2 -->
-  <button id="btnViaje" class="mt-6 bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-6 rounded-full animated-button hidden">¿Me acompañas a este hermoso viaje mvda?</button>
+  <div id="mensaje-amor" class="seccion">
+    <p style="font-size: 1.2em;">Amore aunque la distancia nos impida muchas cosas, mi corabro sigue latiendo por ti bb</p>
+  </div>
+  <button id="boton-viaje" onclick="verBienvenida()">me acompañas a este hermoso viaje mvda</button>
 
-  <!-- Sección de bienvenida -->
-  <div id="bienvenida" class="mt-10 hidden">
-    <h2 class="text-3xl">OH!! Bienvenida cielo. ven acompáñame</h2>
-    <div id="imagenes" class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6 opacity-0 transition-opacity duration-1000">
-      <img src="https://via.placeholder.com/300x200?text=Momento+1" class="rounded-2xl shadow-xl" />
-      <img src="https://via.placeholder.com/300x200?text=Momento+2" class="rounded-2xl shadow-xl" />
-      <img src="https://via.placeholder.com/300x200?text=Momento+3" class="rounded-2xl shadow-xl" />
-      <img src="https://via.placeholder.com/300x200?text=Momento+4" class="rounded-2xl shadow-xl" />
+  <div id="bienvenida" class="seccion">
+    <p style="font-size: 1.3em;">OH!! Bienvenida cielo. ven acompáñame</p>
+  </div>
+
+  <div id="imagenes-extra" class="seccion">
+    <div class="galeria">
+      <img src="https://i.ibb.co/example3.jpg" alt="Recuerdo 3">
+      <img src="https://i.ibb.co/example4.jpg" alt="Recuerdo 4">
     </div>
   </div>
 
-  <!-- Música -->
-  <audio id="miAudio" src="./rises-the-moon.mp3"></audio>
+  <div class="seccion">
+    <h2 style="color: var(--morado-claro);">Nuestros Momentos bajo la Luna</h2>
+    <div class="galeria">
+      <img src="https://i.ibb.co/example1.jpg" alt="Recuerdo 1">
+      <img src="https://i.ibb.co/example2.jpg" alt="Recuerdo 2">
+    </div>
+    <div id="luna-final">
+      <img src="https://i.ibb.co/3R6kZX5/luna.png" alt="Luna mágica" width="100">
+    </div>
+  </div>
 
   <script>
-    const btnMensaje = document.getElementById('verMensaje');
-    const mensaje1 = document.getElementById('mensaje1');
-    const btnViaje = document.getElementById('btnViaje');
-    const bienvenida = document.getElementById('bienvenida');
-    const imagenes = document.getElementById('imagenes');
-    const audio = document.getElementById('miAudio');
+    const musica = document.getElementById('musica');
+    const btnMusica = document.getElementById('boton-musica');
+    let musicaActiva = false;
 
-    btnMensaje.addEventListener('click', () => {
-      mensaje1.classList.remove('hidden');
-      audio.play();
-      setTimeout(() => {
-        btnViaje.classList.remove('hidden');
-      }, 6000);
-    });
+    function controlarMusica() {
+      if (!musicaActiva) {
+        musica.play().then(() => {
+          musicaActiva = true;
+          btnMusica.textContent = '🔊';
+        }).catch(() => alert("Toca la pantalla para activar el sonido"));
+      } else {
+        musica.pause();
+        musicaActiva = false;
+        btnMusica.textContent = '🎶';
+      }
+    }
 
-    btnViaje.addEventListener('click', () => {
-      bienvenida.scrollIntoView({ behavior: 'smooth' });
-      bienvenida.classList.remove('hidden');
+    function verMensaje() {
+      document.getElementById('disculpas').scrollIntoView({ behavior: 'smooth' });
+      if (!musicaActiva) controlarMusica();
       setTimeout(() => {
-        imagenes.classList.remove('opacity-0');
-      }, 3000);
-    });
+        const mensaje = document.getElementById('mensaje-amor');
+        mensaje.style.display = 'block';
+        setTimeout(() => mensaje.style.opacity = '1', 100);
+
+        setTimeout(() => {
+          const btnViaje = document.getElementById('boton-viaje');
+          btnViaje.style.display = 'inline-block';
+          setTimeout(() => btnViaje.style.opacity = '1', 100);
+        }, 6000);
+      }, 1000);
+    }
+
+    function verBienvenida() {
+      document.getElementById('bienvenida').scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => {
+        const bienvenida = document.getElementById('bienvenida');
+        bienvenida.style.display = 'block';
+        setTimeout(() => bienvenida.style.opacity = '1', 100);
+        setTimeout(() => {
+          const imagenes = document.getElementById('imagenes-extra');
+          imagenes.style.display = 'block';
+          setTimeout(() => imagenes.scrollIntoView({ behavior: 'smooth' }), 500);
+          setTimeout(() => imagenes.style.opacity = '1', 100);
+        }, 3000);
+      }, 100);
+    }
   </script>
 </body>
 </html>
