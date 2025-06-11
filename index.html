@@ -146,6 +146,7 @@
       cursor: pointer;
       transition: transform 0.3s ease;
     }
+
     .floating-box:hover {
       transform: scale(1.05);
     }
@@ -217,87 +218,102 @@
   </div>
 
   <div id="seccion-extra" class="seccion hidden fade-in">
-    <p class="text-center text-xl mt-4">¿Te acuerdas 🥹, jaja tan bellos</p>
-    <!-- Sección adicional de fotos dentro de cuadro morado -->
-<!-- Sección adicional de fotos dentro de cuadro morado -->
-<section id="fotos-extra" class="hidden transition-opacity duration-1000 opacity-0">
-  <div class="bg-purple-200 p-4 rounded-2xl mt-10 flex flex-wrap justify-center gap-4">
-    <img src="foto4.jpg" class="w-40 rounded-xl shadow-md" />
-    <img src="foto5.jpg" class="w-40 rounded-xl shadow-md" />
-    <img src="foto6.jpg" class="w-40 rounded-xl shadow-md" />
+    <p class="text-center text-xl mt-4">¿Te acuerdas 🥹, jaja tan bellos?</p>
+
+    <section id="fotos-extra" class="hidden transition-opacity duration-1000 opacity-0">
+      <div class="bg-purple-200 p-4 rounded-2xl mt-10 flex flex-wrap justify-center gap-4">
+        <img src="foto4.jpg" class="w-40 rounded-xl shadow-md" />
+        <img src="foto5.jpg" class="w-40 rounded-xl shadow-md" />
+        <img src="foto6.jpg" class="w-40 rounded-xl shadow-md" />
+      </div>
+    </section>
+
+    <div id="btn1-container" class="flex justify-center mt-10 hidden">
+      <button id="btn1" class="animate-pulse bg-purple-500 text-white font-bold py-2 px-4 rounded-full shadow-lg">
+        Ven, sígueme
+      </button>
+    </div>
+
+    <section id="foto-oculta1" class="hidden flex justify-center mt-10 transition-opacity duration-1000 opacity-0">
+      <img src="foto7.jpg" class="w-60 rounded-xl shadow-lg" />
+    </section>
+
+    <div id="btn2-container" class="flex justify-center mt-10 hidden">
+      <button id="btn2" class="animate-pulse bg-purple-500 text-white font-bold py-2 px-4 rounded-full shadow-lg">
+        ¡Sigue bajando!
+      </button>
+    </div>
+
+    <section id="texto-final" class="hidden mt-10 text-center text-xl text-purple-700 font-semibold transition-opacity duration-1000 opacity-0">
+      qujegduiaedqwhegd
+    </section>
+
+    <div id="btn3-container" class="flex justify-center mt-10 hidden">
+      <button id="btn3" class="animate-pulse bg-purple-500 text-white font-bold py-2 px-4 rounded-full shadow-lg">
+        Ver último mensaje
+      </button>
+    </div>
   </div>
-</section>
 
+  <script>
+    function controlarMusica() {
+      const musica = document.getElementById('musica');
+      const boton = document.getElementById('boton-musica');
+      if (musica.paused) {
+        musica.play();
+        boton.textContent = '⏸️';
+      } else {
+        musica.pause();
+        boton.textContent = '🎶';
+      }
+    }
 
-<!-- Primer botón -->
-<div id="btn1-container" class="flex justify-center mt-10 hidden">
-  <button id="btn1" class="animate-pulse bg-purple-500 text-white font-bold py-2 px-4 rounded-full shadow-lg">
-    Ven, sígueme
-  </button>
-</div>
+    function verMensaje() {
+      document.getElementById('disculpas').classList.remove('hidden');
+      document.getElementById('disculpas').scrollIntoView({ behavior: 'smooth' });
+    }
 
-<!-- Segunda sección de imagen -->
-<section id="foto-oculta1" class="hidden flex justify-center mt-10 transition-opacity duration-1000 opacity-0">
-  <img src="foto7.jpg" class="w-60 rounded-xl shadow-lg" />
-</section>
-
-<!-- Segundo botón -->
-<div id="btn2-container" class="flex justify-center mt-10 hidden">
-  <button id="btn2" class="animate-pulse bg-purple-500 text-white font-bold py-2 px-4 rounded-full shadow-lg">
-    ¡Sigue bajando!
-  </button>
-</div>
-
-<!-- Texto final -->
-<section id="texto-final" class="hidden mt-10 text-center text-xl text-purple-700 font-semibold transition-opacity duration-1000 opacity-0">
-  qujegduiaedqwhegd
-</section>
-
-<!-- Tercer botón -->
-<div id="btn3-container" class="flex justify-center mt-10 hidden">
-  <button id="btn3" class="animate-pulse bg-purple-500 text-white font-bold py-2 px-4 rounded-full shadow-lg">
-    Ver último mensaje
-  </button>
-</div>
-
-<!-- Script animaciones -->
-<script>
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      document.getElementById('btn1-container').classList.remove('hidden');
-      document.getElementById('btn1-container').scrollIntoView({ behavior: 'smooth' });
-    }, 1500); // Espera 1.5s para bajar a mostrar el botón
-
-    document.getElementById('btn1').addEventListener('click', () => {
-      document.getElementById('fotos-extra').classList.remove('hidden');
-      document.getElementById('fotos-extra').classList.add('opacity-100');
-      document.getElementById('fotos-extra').scrollIntoView({ behavior: 'smooth' });
+    function verBienvenida() {
+      document.getElementById('bienvenida').classList.remove('hidden');
+      document.getElementById('bienvenida').scrollIntoView({ behavior: 'smooth' });
 
       setTimeout(() => {
+        document.getElementById('imagenes-extra').classList.remove('hidden');
+        document.getElementById('imagenes-extra').scrollIntoView({ behavior: 'smooth' });
+
+        setTimeout(() => {
+          document.getElementById('seccion-extra').classList.remove('hidden');
+          document.getElementById('btn1-container').classList.remove('hidden');
+        }, 1500);
+      }, 1500);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn1 = document.getElementById('btn1');
+      const btn2 = document.getElementById('btn2');
+      const btn3 = document.getElementById('btn3');
+
+      if (btn1) btn1.addEventListener('click', () => {
+        const fotosExtra = document.getElementById('fotos-extra');
+        fotosExtra.classList.remove('hidden');
+        fotosExtra.classList.add('opacity-100');
         document.getElementById('btn2-container').classList.remove('hidden');
-        document.getElementById('btn2-container').scrollIntoView({ behavior: 'smooth' });
-      }, 5000); // Espera 5 segundos
-    });
+      });
 
-    document.getElementById('btn2').addEventListener('click', () => {
-      document.getElementById('foto-oculta1').classList.remove('hidden');
-      document.getElementById('foto-oculta1').classList.add('opacity-100');
-      document.getElementById('foto-oculta1').scrollIntoView({ behavior: 'smooth' });
-
-      setTimeout(() => {
+      if (btn2) btn2.addEventListener('click', () => {
+        const fotoOculta = document.getElementById('foto-oculta1');
+        fotoOculta.classList.remove('hidden');
+        fotoOculta.classList.add('opacity-100');
         document.getElementById('btn3-container').classList.remove('hidden');
-        document.getElementById('btn3-container').scrollIntoView({ behavior: 'smooth' });
-      }, 6000); // Espera 6 segundos
+      });
+
+      if (btn3) btn3.addEventListener('click', () => {
+        const textoFinal = document.getElementById('texto-final');
+        textoFinal.classList.remove('hidden');
+        textoFinal.classList.add('opacity-100');
+        textoFinal.scrollIntoView({ behavior: 'smooth' });
+      });
     });
-
-    document.getElementById('btn3').addEventListener('click', () => {
-      document.getElementById('texto-final').classList.remove('hidden');
-      document.getElementById('texto-final').classList.add('opacity-100');
-      document.getElementById('texto-final').scrollIntoView({ behavior: 'smooth' });
-     });
-  });
-</script>
-
+  </script>
 </body>
 </html>
-
