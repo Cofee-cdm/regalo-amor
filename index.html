@@ -270,38 +270,39 @@
    
   <script>
       
-    function controlarMusica() {
-      const musica = document.getElementById('musica');
-      const boton = document.getElementById('boton-musica');
-      if (musica.paused) {
-        musica.play();
-        boton.textContent = '⏸️';
-      } else {
-        musica.pause();
-        boton.textContent = '🎶';
-      }
+   <script>
+  function controlarMusica() {
+    const musica = document.getElementById('musica');
+    const boton = document.getElementById('boton-musica');
+    if (musica.paused) {
+      musica.play();
+      boton.textContent = '⏸️';
+    } else {
+      musica.pause();
+      boton.textContent = '🎶';
     }
+  }
 
-    function verMensaje() {
-      document.getElementById('disculpas').classList.remove('hidden');
-      document.getElementById('disculpas').scrollIntoView({ behavior: 'smooth' });
-    }
+  function verMensaje() {
+    document.getElementById('disculpas').classList.remove('hidden');
+    document.getElementById('disculpas').scrollIntoView({ behavior: 'smooth' });
+  }
 
-    function verBienvenida() {
-      document.getElementById('bienvenida').classList.remove('hidden');
-      document.getElementById('bienvenida').scrollIntoView({ behavior: 'smooth' });
+  function verBienvenida() {
+    document.getElementById('bienvenida').classList.remove('hidden');
+    document.getElementById('bienvenida').scrollIntoView({ behavior: 'smooth' });
+
+    setTimeout(() => {
+      document.getElementById('imagenes-extra').classList.remove('hidden');
+      document.getElementById('imagenes-extra').scrollIntoView({ behavior: 'smooth' });
 
       setTimeout(() => {
-        document.getElementById('imagenes-extra').classList.remove('hidden');
-        document.getElementById('imagenes-extra').scrollIntoView({ behavior: 'smooth' });
-
-        setTimeout(() => {
-          document.getElementById('seccion-extra').classList.remove('hidden');
-          document.getElementById('btn1-container').classList.remove('hidden');
-        }, 1500);
+        document.getElementById('seccion-extra').classList.remove('hidden');
+        // Si aquí está btn1-container por primera vez, aún no mostrarlo
       }, 1500);
-    }
-      
+    }, 1500);
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     const btn1 = document.getElementById('btn1');
     const btn2 = document.getElementById('btn2');
@@ -328,28 +329,30 @@
       textoFinal.scrollIntoView({ behavior: 'smooth' });
     });
 
+    // Mostrar el mensaje "¿Te acuerdas?" después de 3 segundos
     setTimeout(() => {
-  const recuerdo = document.getElementById('recuerdo');
-  if (recuerdo) {
-    recuerdo.classList.add('mostrar');
+      const recuerdo = document.getElementById('recuerdo');
+      if (recuerdo) {
+        recuerdo.classList.add('mostrar');
 
-    // Cerrar visualmente el cuadro morado si es necesario
-    const imagenesExtra = document.getElementById('imagenes-extra');
-    if (imagenesExtra) {
-      imagenesExtra.classList.add('mb-10'); // agrega un margen inferior por si el div está muy pegado
-    }
+        // Opcional: dar espacio al contenedor morado
+        const imagenesExtra = document.getElementById('imagenes-extra');
+        if (imagenesExtra) {
+          imagenesExtra.classList.add('mb-10');
+        }
 
-    // Después de 5 segundos más, mostrar el botón "Ven, sígueme"
-    setTimeout(() => {
-      const btn1Container = document.getElementById('btn1-container');
-      if (btn1Container) {
-        btn1Container.classList.remove('hidden');
-        btn1Container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Mostrar botón "Ven, sígueme" después de 5 segundos más
+        setTimeout(() => {
+          const btn1Container = document.getElementById('btn1-container');
+          if (btn1Container) {
+            btn1Container.classList.remove('hidden');
+            btn1Container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 5000);
       }
-    }, 5000);
-  }
-}, 3000);
-
+    }, 3000);
+  });
+</script>
 </script>
 </body>
 </html>
