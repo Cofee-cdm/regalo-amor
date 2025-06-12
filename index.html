@@ -233,16 +233,16 @@
       </button>
     </div>
       
-     <div id="fotos-extra" class="hidden opacity-0 transition-opacity duration-1000">
-  <div class="bg-purple-200 p-4 rounded-xl shadow-lg border border-purple-400">
+<div id="fotos-extra" class="hidden opacity-0 transition-opacity duration-1000 mt-10">
+  <div class="bg-purple-200 border border-purple-400 p-6 rounded-2xl shadow-lg max-w-4xl mx-auto">
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-      <img src="https://i.ibb.co/example3.jpg" alt="Recuerdo 1" class="rounded-lg shadow" />
-      <img src="https://i.ibb.co/example4.jpg" alt="Recuerdo 2" class="rounded-lg shadow" />
-      <img src="https://i.ibb.co/example5.jpg" alt="Recuerdo 3" class="rounded-lg shadow" />
+      <img src="https://i.ibb.co/example3.jpg" alt="Recuerdo 1" class="rounded-xl shadow-md" />
+      <img src="https://i.ibb.co/example4.jpg" alt="Recuerdo 2" class="rounded-xl shadow-md" />
+      <img src="https://i.ibb.co/example5.jpg" alt="Recuerdo 3" class="rounded-xl shadow-md" />
     </div>
   </div>
 </div>
-      
+        
     <section id="fotos-extra" class="hidden transition-opacity duration-1000 opacity-0">
       <div class="bg-purple-200 p-4 rounded-2xl mt-10 flex flex-wrap justify-center gap-4">
         <img src="foto4.jpg" class="w-40 rounded-xl shadow-md" />
@@ -309,17 +309,20 @@
     const btn3 = document.getElementById('btn3');
 
     if (btn1) {
-      btn1.addEventListener('click', () => {
-        const fotosExtra = document.getElementById('fotos-extra');
-        if (fotosExtra) {
-          fotosExtra.classList.remove('hidden');
-          fotosExtra.classList.add('opacity-100');
-          fotosExtra.scrollIntoView({ behavior: 'smooth' });
-        }
+    btn1.addEventListener('click', () => {
+      const fotosExtra = document.getElementById('fotos-extra');
 
-        btn1.style.display = 'none'; // Oculta el botón
-      });
-    }
+      if (fotosExtra) {
+        fotosExtra.classList.remove('hidden');
+        setTimeout(() => {
+          fotosExtra.classList.add('opacity-100');
+        }, 50);
+
+        fotosExtra.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  }
+
 
     if (btn2) {
       btn2.addEventListener('click', () => {
