@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>Para ti, Mi Corazón de Melocotón 💗🌷</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
   <style>
       #recuerdo {
   display: none;
@@ -189,99 +188,89 @@
   </style>
 </head>
 <body>
-    
   <audio id="musica" loop>
     <source src="rises-the-moon.mp3" type="audio/mpeg">
     Tu navegador no soporta audio HTML5.
   </audio>
 
-<div id="portada">
-  <h1 style="font-size: 3em; margin-bottom: 20px;">Para ti, Mi Corazón de Melocotón 💗🌷</h1>
-  <p style="font-size: 1.3em; max-width: 80%; margin: 0 auto 30px;">
-    "Te lo dedico con mucho amor 🥹..."
-  </p>
-
-  <div id="boton-disculpas" class="hidden">
-    <button onclick="verBienvenida()">Ven, acompáñame cielo!!</button>
+  <div id="portada">
+    <h1 style="font-size: 3em; margin-bottom: 20px;">Para ti, Mi Corazón de Melocotón 💗🌷</h1>
+    <p style="font-size: 1.3em; max-width: 80%; margin: 0 auto 30px;">
+      "Te lo dedico con mucho amor 🥹..."
+    </p>
+    <button onclick="verMensaje()">Ven, acompáñame cielo!!</button>
   </div>
-</div>
 
-<div id="disculpas" class="seccion hidden">
-  <div class="corazon">💜</div>
-  <h2 style="color: var(--morado-claro);">Mi corazón de melocotón   quería decirte que ...</h2>
-  <p style="font-size: 1.1em; line-height: 1.8;">
-    BB, gracias infinitamente por acompañarme en cada momento, siempre lo recordaré con la mejor impresión.  
-    <b>I love you forever</b>.  
-    Te aprecio, quiero, adoro y amo. Eres muy especial para mí 🥹
-  </p>
-  <button id="boton-viaje" onclick="verBienvenida()">¿Me acompañas a este hermoso viaje, mi vida?</button>
-</div>
-
+  <div id="disculpas" class="seccion hidden">
+    <div class="corazon">💜</div>
+    <h2 style="color: var(--morado-claro);">Mi corazón de melocotón   quería decirte que ...</h2>
+    <p style="font-size: 1.1em; line-height: 1.8;">
+      BB, gracias infinitamente por acompañarme en cada momento, siempre lo recordaré con la mejor impresión.  
+      <b>I love you forever</b>.  
+      Te aprecio, quiero, adoro y amo. Eres muy especial para mí 🥹
+    </p>
+   <button id="boton-viaje" onclick="verBienvenida()">¿Me acompañas a este hermoso viaje, mi vida?</button>
+  </div>
 
   <div id="bienvenida" class="seccion hidden">
     <p style="font-size: 1.3em;">OH!! Bienvenida cielo, ven acompáñame</p>
   </div>
 
- <div id="imagenes-extra" class="seccion hidden">
-  <div class="galeria">
-    <img src="https://i.ibb.co/example3.jpg" alt="Recuerdo 3">
-    <img src="https://i.ibb.co/example4.jpg" alt="Recuerdo 4">
-    <img src="https://i.ibb.co/example5.jpg" alt="Recuerdo 5">
-  </div>
-  
-  <div id="recuerdo" class="text-white text-center text-xl mt-4">
-    <p style="font-size: 1.3em;">¿Te acuerdas? 🥹 jajaj tan bellos</p>
-  </div>
-
-  <div id="btn1-container" class="flex justify-center mt-10 hidden">
-    <button id="btn1" class="animate-pulse bg-purple-500 text-white font-bold py-2 px-4 rounded-full shadow-lg">
-      Ven, sígueme
-    </button>
-  </div>
-</div>
-
-<div id="fotos-extra" class="seccion hidden">
-  <div class="galeria">
-    <img src="https://i.ibb.co/example6.jpg" alt="Recuerdo 6">
-    <img src="https://i.ibb.co/example7.jpg" alt="Recuerdo 7">
-    <img src="https://i.ibb.co/example8.jpg" alt="Recuerdo 8">
-  </div>
-</div>
-        
-      <div id="btn2-container" class="flex justify-center mt-10 hidden">
-  <button id="btn2" class="animate-pulse bg-purple-500 text-white font-bold py-2 px-4 rounded-full shadow-lg">
-    ¡Te acuerdas 🥹!
-  </button>   
-</div>
+  <div id="imagenes-extra" class="seccion hidden">
+    <div class="galeria">
+      <img src="https://i.ibb.co/example3.jpg" alt="Recuerdo 3">
+      <img src="https://i.ibb.co/example4.jpg" alt="Recuerdo 4">
+      <img src="https://i.ibb.co/example4.jpg" alt="Recuerdo 5">
+    </div>
       
-      <section id="fotos-04-05" class="hidden transition-opacity duration-1000 opacity-0">
-  <div class="bg-purple-200 p-4 rounded-2xl mt-10 flex flex-wrap justify-center gap-4">
-    <img src="foto4.jpg" class="w-40 rounded-xl shadow-md" />
-    <img src="foto5.jpg" class="w-40 rounded-xl shadow-md" />
-  </div>
-</section>
-  
-  <div id="btn3-container" class="flex justify-center mt-10 hidden">
-  <button id="btn3" class="animate-pulse bg-purple-500 text-white font-bold py-2 px-4 rounded-full shadow-lg">
-    Mira esta hermosura
-  </button>
+      <div id="recuerdo" class="text-white text-center text-xl mt-4">
+  <p style="font-size: 1.3em;">¿Te acuerdas? 🥹 jajaj tan bellos</p>
 </div>
+
+<div id="btn1-container" class="flex justify-center mt-10 hidden">
+      <button id="btn1" class="animate-pulse bg-purple-500 text-white font-bold py-2 px-4 rounded-full shadow-lg">
+        Ven, sígueme
+      </button>
+    </div>
+      
+     <div id="fotos-extra" class="hidden transition-all duration-1000 opacity-0 mt-10">
+  <div class="galeria">
+    <img src="https://i.ibb.co/example3.jpg" class="w-full max-w-md mx-auto mb-4 rounded-xl shadow-xl" alt="Recuerdo 3">
+    <img src="https://i.ibb.co/example4.jpg" class="w-full max-w-md mx-auto mb-4 rounded-xl shadow-xl" alt="Recuerdo 4">
+    <img src="https://i.ibb.co/example5.jpg" class="w-full max-w-md mx-auto mb-4 rounded-xl shadow-xl" alt="Recuerdo 5">
+  </div>
+</div>
+
+    <section id="fotos-extra" class="hidden transition-opacity duration-1000 opacity-0">
+      <div class="bg-purple-200 p-4 rounded-2xl mt-10 flex flex-wrap justify-center gap-4">
+        <img src="foto4.jpg" class="w-40 rounded-xl shadow-md" />
+        <img src="foto5.jpg" class="w-40 rounded-xl shadow-md" />
+      </div>
+    </section>
+
+    <div id="btn2-container" class="flex justify-center mt-10 hidden">
+      <button id="btn2" class="animate-pulse bg-purple-500 text-white font-bold py-2 px-4 rounded-full shadow-lg">
+        ¡Te acuerdas 🥹!
+      </button>
+    </div>
 
     <section id="foto-oculta1" class="hidden flex justify-center mt-10 transition-opacity duration-1000 opacity-0">
-  <img src="foto7.jpg" class="w-60 rounded-xl shadow-lg" />
-</section>
+      <img src="foto7.jpg" class="w-60 rounded-xl shadow-lg" />
+    </section>
 
-    <div id="btn4-container" class="flex justify-center mt-10 hidden">
-  <button id="btn4" class="animate-pulse bg-purple-500 text-white font-bold py-2 px-4 rounded-full shadow-lg">
-    Te quería decir esto bb
-  </button>
-</div>
+    <div id="btn3-container" class="flex justify-center mt-10 hidden">
+      <button id="btn3" class="animate-pulse bg-purple-500 text-white font-bold py-2 px-4 rounded-full shadow-lg">
+        Te queria decir esto bb
+      </button>
+    </div>
     
     <section id="texto-final" class="hidden mt-10 text-center text-xl text-purple-700 font-semibold transition-opacity duration-1000 opacity-0">
-  qujegduiaedqwhegd
-</section>
-  
+      qujegduiaedqwhegd
+    </section>
+
+   
   <script>
+      
   function controlarMusica() {
     const musica = document.getElementById('musica');
     const boton = document.getElementById('boton-musica');
@@ -294,88 +283,65 @@
     }
   }
 
-function verBienvenida() {
-    document.getElementById("disculpas").classList.remove("hidden");
-    document.getElementById("boton-disculpas").classList.add("hidden");
+  function verMensaje() {
+    document.getElementById('disculpas').classList.remove('hidden');
+    document.getElementById('disculpas').scrollIntoView({ behavior: 'smooth' });
   }
 
-  setTimeout(() => {
-    const imgExtra = document.getElementById('imagenes-extra');
-    if (imgExtra) {
-      imgExtra.classList.remove('hidden');
-      imgExtra.scrollIntoView({ behavior: 'smooth' });
-    }
+  function verBienvenida() {
+    document.getElementById('bienvenida').classList.remove('hidden');
+    document.getElementById('bienvenida').scrollIntoView({ behavior: 'smooth' });
+
+    setTimeout(() => {
+      document.getElementById('imagenes-extra').classList.remove('hidden');
+      document.getElementById('imagenes-extra').scrollIntoView({ behavior: 'smooth' });
+
+      setTimeout(() => {
+        document.getElementById('seccion-extra').classList.remove('hidden');
+        // Si aquí está btn1-container por primera vez, aún no mostrarlo
       }, 1500);
-}
+    }, 1500);
+  }
 
- document.addEventListener('DOMContentLoaded', () => {
-  
+  document.addEventListener('DOMContentLoaded', () => {
     const btn1 = document.getElementById('btn1');
-    if (btn1) {
-      btn1.addEventListener('click', () => {
-        const fotosExtra = document.getElementById('fotos-extra');
-        fotosExtra.classList.remove('hidden');
-        fotosExtra.classList.add('opacity-100');
-        fotosExtra.scrollIntoView({ behavior: 'smooth' });
-
-        document.getElementById('btn1-container').classList.add('hidden');
-        document.getElementById('btn2-container').classList.remove('hidden');
-      });
-    }
-
     const btn2 = document.getElementById('btn2');
-    if (btn2) {
-      btn2.addEventListener('click', () => {
-        const seccion = document.getElementById('fotos-04-05');
-        seccion.classList.remove('hidden');
-        setTimeout(() => seccion.classList.add('opacity-100'), 10);
-        seccion.scrollIntoView({ behavior: 'smooth' });
-
-        document.getElementById('btn2-container').classList.add('hidden');
-        document.getElementById('btn3-container').classList.remove('hidden');
-      });
-    }
-
     const btn3 = document.getElementById('btn3');
-    if (btn3) {
-      btn3.addEventListener('click', () => {
-        const seccion = document.getElementById('foto-oculta1');
-        seccion.classList.remove('hidden');
-        setTimeout(() => seccion.classList.add('opacity-100'), 10);
-        seccion.scrollIntoView({ behavior: 'smooth' });
 
-        document.getElementById('btn3-container').classList.add('hidden');
-        document.getElementById('btn4-container').classList.remove('hidden');
-      });
-    }
+    if (btn1) btn1.addEventListener('click', () => {
+      const fotosExtra = document.getElementById('fotos-extra');
+      fotosExtra.classList.remove('hidden');
+      fotosExtra.classList.add('opacity-100');
+      fotosExtra.scrollIntoView({ behavior: 'smooth' });
+    });
 
-    const btn4 = document.getElementById('btn4');
-    if (btn4) {
-      btn4.addEventListener('click', () => {
-        const seccion = document.getElementById('texto-final');
-        seccion.classList.remove('hidden');
-        setTimeout(() => seccion.classList.add('opacity-100'), 10);
-        seccion.scrollIntoView({ behavior: 'smooth' });
+    if (btn2) btn2.addEventListener('click', () => {
+      const fotoOculta = document.getElementById('foto-oculta1');
+      fotoOculta.classList.remove('hidden');
+      fotoOculta.classList.add('opacity-100');
+      document.getElementById('btn3-container').classList.remove('hidden');
+    });
 
-        document.getElementById('btn4-container').classList.add('hidden');
-      });
-    }
+    if (btn3) btn3.addEventListener('click', () => {
+      const textoFinal = document.getElementById('texto-final');
+      textoFinal.classList.remove('hidden');
+      textoFinal.classList.add('opacity-100');
+      textoFinal.scrollIntoView({ behavior: 'smooth' });
+    });
 
+    // Mostrar el mensaje "¿Te acuerdas?" después de 3 segundos
     setTimeout(() => {
       const recuerdo = document.getElementById('recuerdo');
       if (recuerdo) {
         recuerdo.classList.add('mostrar');
 
+        // Opcional: dar espacio al contenedor morado
         const imagenesExtra = document.getElementById('imagenes-extra');
         if (imagenesExtra) {
           imagenesExtra.classList.add('mb-10');
         }
 
-        const imagenesExtraDos = document.getElementById('imagenes-extra-dos');
-        if (imagenesExtraDos) {
-          imagenesExtraDos.classList.add('mb-10');
-        }
-
+        // Mostrar botón "Ven, sígueme" después de 5 segundos más
         setTimeout(() => {
           const btn1Container = document.getElementById('btn1-container');
           if (btn1Container) {
@@ -385,7 +351,8 @@ function verBienvenida() {
         }, 9000);
       }
     }, 3000);
-  });  
+  });
+
 </script>
-</body> 
+</body>
 </html>
