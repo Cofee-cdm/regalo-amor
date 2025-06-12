@@ -289,23 +289,20 @@
     }
   }
 
- function verBienvenida() {
-  document.getElementById('bienvenida').classList.remove('hidden');
-  document.getElementById('bienvenida').scrollIntoView({ behavior: 'smooth' });
+function verBienvenida() {
+  const bienvenida = document.getElementById('bienvenida');
+  if (bienvenida) {
+    bienvenida.classList.remove('hidden');
+    bienvenida.scrollIntoView({ behavior: 'smooth' });
+  }
 
   setTimeout(() => {
-    document.getElementById('imagenes-extra').classList.remove('hidden');
-    document.getElementById('imagenes-extra').scrollIntoView({ behavior: 'smooth' });
-
-    setTimeout(() => {
-      document.getElementById('imagenes-extra-dos').classList.remove('hidden');
-      document.getElementById('imagenes-extra-dos').scrollIntoView({ behavior: 'smooth' });
-
-      setTimeout(() => {
-        document.getElementById('seccion-extra').classList.remove('hidden');
+    const imgExtra = document.getElementById('imagenes-extra');
+    if (imgExtra) {
+      imgExtra.classList.remove('hidden');
+      imgExtra.scrollIntoView({ behavior: 'smooth' });
+    }
       }, 1500);
-    }, 1500);
-  }, 1500); 
 }
 
  document.addEventListener('DOMContentLoaded', () => {
