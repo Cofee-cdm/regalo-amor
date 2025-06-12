@@ -199,7 +199,7 @@
     <p style="font-size: 1.3em; max-width: 80%; margin: 0 auto 30px;">
       "Te lo dedico con mucho amor 🥹..."
     </p>
-    <button onclick="verMensaje()">Ven, acompáñame cielo!!</button>
+    <button onclick="verBienvenida()">Ven, acompáñame cielo!!</button>
   </div>
 
   <div id="disculpas" class="seccion hidden">
@@ -290,10 +290,10 @@
   }
 
 function verBienvenida() {
-  const bienvenida = document.getElementById('bienvenida');
-  if (bienvenida) {
+    document.getElementById('portada').classList.add('hidden');
+    const bienvenida = document.getElementById('bienvenida');
     bienvenida.classList.remove('hidden');
-    bienvenida.scrollIntoView({ behavior: 'smooth' });
+    bienvenida.classList.add('fade-in');
   }
 
   setTimeout(() => {
