@@ -301,38 +301,46 @@
         }, 1500);
       }, 1500);
     }
+      
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn1 = document.getElementById('btn1');
+    const btn2 = document.getElementById('btn2');
+    const btn3 = document.getElementById('btn3');
 
-    document.addEventListener('DOMContentLoaded', () => {
-      const btn1 = document.getElementById('btn1');
-      const btn2 = document.getElementById('btn2');
-      const btn3 = document.getElementById('btn3');
+    if (btn1) btn1.addEventListener('click', () => {
+      const fotosExtra = document.getElementById('fotos-extra');
+      fotosExtra.classList.remove('hidden');
+      fotosExtra.classList.add('opacity-100');
+      document.getElementById('btn2-container').classList.remove('hidden');
+    });
 
-      if (btn1) btn1.addEventListener('click', () => {
-        const fotosExtra = document.getElementById('fotos-extra');
-        fotosExtra.classList.remove('hidden');
-        fotosExtra.classList.add('opacity-100');
-        document.getElementById('btn2-container').classList.remove('hidden');
-      });
+    if (btn2) btn2.addEventListener('click', () => {
+      const fotoOculta = document.getElementById('foto-oculta1');
+      fotoOculta.classList.remove('hidden');
+      fotoOculta.classList.add('opacity-100');
+      document.getElementById('btn3-container').classList.remove('hidden');
+    });
 
-      if (btn2) btn2.addEventListener('click', () => {
-        const fotoOculta = document.getElementById('foto-oculta1');
-        fotoOculta.classList.remove('hidden');
-        fotoOculta.classList.add('opacity-100');
-        document.getElementById('btn3-container').classList.remove('hidden');
-      });
+    if (btn3) btn3.addEventListener('click', () => {
+      const textoFinal = document.getElementById('texto-final');
+      textoFinal.classList.remove('hidden');
+      textoFinal.classList.add('opacity-100');
+      textoFinal.scrollIntoView({ behavior: 'smooth' });
+    });
 
-      if (btn3) btn3.addEventListener('click', () => {
-        const textoFinal = document.getElementById('texto-final');
-        textoFinal.classList.remove('hidden');
-        textoFinal.classList.add('opacity-100');
-        textoFinal.scrollIntoView({ behavior: 'smooth' });
-      });
-        
-   // 👇 Mostrar el texto con retraso de 3 segundos
+    // 👇 Mostrar el texto con retraso de 3 segundos
     setTimeout(() => {
       const recuerdo = document.getElementById('recuerdo');
       if (recuerdo) {
         recuerdo.classList.add('mostrar');
+
+        // Después de 5 segundos más, mostrar el botón "Ven, sígueme"
+        setTimeout(() => {
+          const btn1Container = document.getElementById('btn1-container');
+          if (btn1Container) {
+            btn1Container.classList.remove('hidden');
+          }
+        }, 5000);
       }
     }, 3000);
   });
