@@ -217,57 +217,65 @@
     <p style="font-size: 1.3em;">OH!! Bienvenida cielo, ven acompáñame</p>
   </div>
 
-  <div id="imagenes-extra" class="seccion hidden">
-    <div class="galeria">
-      <img src="https://i.ibb.co/example3.jpg" alt="Recuerdo 3">
-      <img src="https://i.ibb.co/example4.jpg" alt="Recuerdo 4">
-      <img src="https://i.ibb.co/example4.jpg" alt="Recuerdo 5">
-    </div>
-      
-      <div id="recuerdo" class="text-white text-center text-xl mt-4">
-  <p style="font-size: 1.3em;">¿Te acuerdas? 🥹 jajaj tan bellos</p>
+ <div id="imagenes-extra" class="seccion hidden">
+  <div class="galeria">
+    <img src="https://i.ibb.co/example3.jpg" alt="Recuerdo 3">
+    <img src="https://i.ibb.co/example4.jpg" alt="Recuerdo 4">
+    <img src="https://i.ibb.co/example5.jpg" alt="Recuerdo 5">
+  </div>
+  
+  <div id="recuerdo" class="text-white text-center text-xl mt-4">
+    <p style="font-size: 1.3em;">¿Te acuerdas? 🥹 jajaj tan bellos</p>
+  </div>
+
+  <div id="btn1-container" class="flex justify-center mt-10 hidden">
+    <button id="btn1" class="animate-pulse bg-purple-500 text-white font-bold py-2 px-4 rounded-full shadow-lg">
+      Ven, sígueme
+    </button>
+  </div>
 </div>
 
-<div id="btn1-container" class="flex justify-center mt-10 hidden">
-      <button id="btn1" class="animate-pulse bg-purple-500 text-white font-bold py-2 px-4 rounded-full shadow-lg">
-        Ven, sígueme
-      </button>
-    </div>
-      
-<div id="fotos-extra-dos" class="seccion hidden">
-  <div class=galeria">
-      <img src="https://i.ibb.co/example3.jpg" alt="Recuerdo 1">
-      <img src="https://i.ibb.co/example4.jpg" alt="Recuerdo 2">
-      <img src="https://i.ibb.co/example5.jpg" alt="Recuerdo 3">
-    </div>
+<div id="fotos-extra" class="seccion hidden">
+  <div class="galeria">
+    <img src="https://i.ibb.co/example6.jpg" alt="Recuerdo 6">
+    <img src="https://i.ibb.co/example7.jpg" alt="Recuerdo 7">
+    <img src="https://i.ibb.co/example8.jpg" alt="Recuerdo 8">
+  </div>
+</div>
         
       <div id="btn2-container" class="flex justify-center mt-10 hidden">
-      <button id="btn2" class="animate-pulse bg-purple-500 text-white font-bold py-2 px-4 rounded-full shadow-lg">
-        ¡Te acuerdas 🥹!
-      </button>   
-    </div>
+  <button id="btn2" class="animate-pulse bg-purple-500 text-white font-bold py-2 px-4 rounded-full shadow-lg">
+    ¡Te acuerdas 🥹!
+  </button>   
+</div>
       
-      <section id="fotos-extra" class="hidden transition-opacity duration-1000 opacity-0">
-      <div class="bg-purple-200 p-4 rounded-2xl mt-10 flex flex-wrap justify-center gap-4">
-        <img src="foto4.jpg" class="w-40 rounded-xl shadow-md" />
-        <img src="foto5.jpg" class="w-40 rounded-xl shadow-md" />
-      </div>
-    </section>
+      <section id="fotos-04-05" class="hidden transition-opacity duration-1000 opacity-0">
+  <div class="bg-purple-200 p-4 rounded-2xl mt-10 flex flex-wrap justify-center gap-4">
+    <img src="foto4.jpg" class="w-40 rounded-xl shadow-md" />
+    <img src="foto5.jpg" class="w-40 rounded-xl shadow-md" />
+  </div>
+</section>
+  
+  <div id="btn3-container" class="flex justify-center mt-10 hidden">
+  <button id="btn3" class="animate-pulse bg-purple-500 text-white font-bold py-2 px-4 rounded-full shadow-lg">
+    Mira esta hermosura
+  </button>
+</div>
 
     <section id="foto-oculta1" class="hidden flex justify-center mt-10 transition-opacity duration-1000 opacity-0">
-      <img src="foto7.jpg" class="w-60 rounded-xl shadow-lg" />
-    </section>
+  <img src="foto7.jpg" class="w-60 rounded-xl shadow-lg" />
+</section>
 
-    <div id="btn3-container" class="flex justify-center mt-10 hidden">
-      <button id="btn3" class="animate-pulse bg-purple-500 text-white font-bold py-2 px-4 rounded-full shadow-lg">
-        Te queria decir esto bb
-      </button>
-    </div>
+    <div id="btn4-container" class="flex justify-center mt-10 hidden">
+  <button id="btn4" class="animate-pulse bg-purple-500 text-white font-bold py-2 px-4 rounded-full shadow-lg">
+    Te quería decir esto bb
+  </button>
+</div>
     
     <section id="texto-final" class="hidden mt-10 text-center text-xl text-purple-700 font-semibold transition-opacity duration-1000 opacity-0">
-      qujegduiaedqwhegd
-    </section>
-
+  qujegduiaedqwhegd
+</section>
+  
   <script>
   function controlarMusica() {
     const musica = document.getElementById('musica');
@@ -281,18 +289,13 @@
     }
   }
 
-  function verMensaje() {
-    document.getElementById('disculpas').classList.remove('hidden');
-    document.getElementById('disculpas').scrollIntoView({ behavior: 'smooth' });
-  }
+ function verBienvenida() {
+  document.getElementById('bienvenida').classList.remove('hidden');
+  document.getElementById('bienvenida').scrollIntoView({ behavior: 'smooth' });
 
-  function verBienvenida() {
-    document.getElementById('bienvenida').classList.remove('hidden');
-    document.getElementById('bienvenida').scrollIntoView({ behavior: 'smooth' });
-
-    setTimeout(() => {
-      document.getElementById('imagenes-extra').classList.remove('hidden');
-      document.getElementById('imagenes-extra').scrollIntoView({ behavior: 'smooth' });
+  setTimeout(() => {
+    document.getElementById('imagenes-extra').classList.remove('hidden');
+    document.getElementById('imagenes-extra').scrollIntoView({ behavior: 'smooth' });
 
     setTimeout(() => {
       document.getElementById('imagenes-extra-dos').classList.remove('hidden');
@@ -300,63 +303,61 @@
 
       setTimeout(() => {
         document.getElementById('seccion-extra').classList.remove('hidden');
-    
       }, 1500);
     }, 1500);
-  }
+  }, 1500); 
+}
 
-  document.addEventListener('DOMContentLoaded', () => {
+ document.addEventListener('DOMContentLoaded', () => {
+  
     const btn1 = document.getElementById('btn1');
-    const btn2 = document.getElementById('btn2');
-    const btn3 = document.getElementById('btn3');
-
     if (btn1) {
       btn1.addEventListener('click', () => {
-
-        
         const fotosExtra = document.getElementById('fotos-extra');
-        if (fotosExtra) {
-          fotosExtra.classList.remove('hidden');
-          setTimeout(() => {
-            fotosExtra.classList.add('opacity-100');
-          }, 50);
+        fotosExtra.classList.remove('hidden');
+        fotosExtra.classList.add('opacity-100');
+        fotosExtra.scrollIntoView({ behavior: 'smooth' });
 
-          fotosExtra.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-
-        const fotosExtraDos = document.getElementById("fotos-extra-dos");
-        if (fotosExtraDos) {
-          fotosExtraDos.classList.remove("hidden");
-          setTimeout(() => {
-            fotosExtra.classList.add('opacity-100');
-          }, 50);
-
-           fotosExtraDos.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-
-    
-    if (btn2) {
-      btn2.addEventListener('click', () => {
-        const fotoOculta = document.getElementById('foto-oculta1');
-        if (fotoOculta) {
-          fotoOculta.classList.remove('hidden');
-          fotoOculta.classList.add('opacity-100');
-        }
-        const btn3Container = document.getElementById('btn3-container');
-        if (btn3Container) {
-          btn3Container.classList.remove('hidden');
-        }
+        document.getElementById('btn1-container').classList.add('hidden');
+        document.getElementById('btn2-container').classList.remove('hidden');
       });
     }
 
+    const btn2 = document.getElementById('btn2');
+    if (btn2) {
+      btn2.addEventListener('click', () => {
+        const seccion = document.getElementById('fotos-04-05');
+        seccion.classList.remove('hidden');
+        setTimeout(() => seccion.classList.add('opacity-100'), 10);
+        seccion.scrollIntoView({ behavior: 'smooth' });
+
+        document.getElementById('btn2-container').classList.add('hidden');
+        document.getElementById('btn3-container').classList.remove('hidden');
+      });
+    }
+
+    const btn3 = document.getElementById('btn3');
     if (btn3) {
       btn3.addEventListener('click', () => {
-        const textoFinal = document.getElementById('texto-final');
-        if (textoFinal) {
-          textoFinal.classList.remove('hidden');
-          textoFinal.classList.add('opacity-100');
-          textoFinal.scrollIntoView({ behavior: 'smooth' });
-        }
+        const seccion = document.getElementById('foto-oculta1');
+        seccion.classList.remove('hidden');
+        setTimeout(() => seccion.classList.add('opacity-100'), 10);
+        seccion.scrollIntoView({ behavior: 'smooth' });
+
+        document.getElementById('btn3-container').classList.add('hidden');
+        document.getElementById('btn4-container').classList.remove('hidden');
+      });
+    }
+
+    const btn4 = document.getElementById('btn4');
+    if (btn4) {
+      btn4.addEventListener('click', () => {
+        const seccion = document.getElementById('texto-final');
+        seccion.classList.remove('hidden');
+        setTimeout(() => seccion.classList.add('opacity-100'), 10);
+        seccion.scrollIntoView({ behavior: 'smooth' });
+
+        document.getElementById('btn4-container').classList.add('hidden');
       });
     }
 
@@ -370,10 +371,10 @@
           imagenesExtra.classList.add('mb-10');
         }
 
-        const imagenesExtraDos = document.getElementById('imagenes-extra');
-        if (imagenesExtrados) {
+        const imagenesExtraDos = document.getElementById('imagenes-extra-dos');
+        if (imagenesExtraDos) {
           imagenesExtraDos.classList.add('mb-10');
-        }  
+        }
 
         setTimeout(() => {
           const btn1Container = document.getElementById('btn1-container');
