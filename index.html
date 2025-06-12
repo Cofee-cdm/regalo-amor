@@ -227,7 +227,7 @@
   <p style="font-size: 1.3em;">¿Te acuerdas? 🥹 jajaj tan bellos</p>
 </div>
 
-           <div id="btn1-container" class="flex justify-center mt-10 hidden">
+<div id="btn1-container" class="flex justify-center mt-10 hidden">
       <button id="btn1" class="animate-pulse bg-purple-500 text-white font-bold py-2 px-4 rounded-full shadow-lg">
         Ven, sígueme
       </button>
@@ -328,22 +328,28 @@
       textoFinal.scrollIntoView({ behavior: 'smooth' });
     });
 
-    // 👇 Mostrar el texto con retraso de 3 segundos
     setTimeout(() => {
-      const recuerdo = document.getElementById('recuerdo');
-      if (recuerdo) {
-        recuerdo.classList.add('mostrar');
+  const recuerdo = document.getElementById('recuerdo');
+  if (recuerdo) {
+    recuerdo.classList.add('mostrar');
 
-        // Después de 5 segundos más, mostrar el botón "Ven, sígueme"
-        setTimeout(() => {
-          const btn1Container = document.getElementById('btn1-container');
-          if (btn1Container) {
-            btn1Container.classList.remove('hidden');
-          }
-        }, 5000);
+    // Cerrar visualmente el cuadro morado si es necesario
+    const imagenesExtra = document.getElementById('imagenes-extra');
+    if (imagenesExtra) {
+      imagenesExtra.classList.add('mb-10'); // agrega un margen inferior por si el div está muy pegado
+    }
+
+    // Después de 5 segundos más, mostrar el botón "Ven, sígueme"
+    setTimeout(() => {
+      const btn1Container = document.getElementById('btn1-container');
+      if (btn1Container) {
+        btn1Container.classList.remove('hidden');
+        btn1Container.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
-    }, 3000);
-  });
+    }, 5000);
+  }
+}, 3000);
+
 </script>
 </body>
 </html>
