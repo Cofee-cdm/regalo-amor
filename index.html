@@ -1,19 +1,21 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <title>Para ti, Mi Corazón de Melocotón 💗🌷</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-      #recuerdo {
-  display: none;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-#recuerdo.mostrar {
-  display: block;
-  opacity: 1;
-}
+    #recuerdo {
+      display: none;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    #recuerdo.mostrar {
+      display: block;
+      opacity: 1;
+    }
+
     :root {
       --morado-oscuro: #6a3093;
       --morado-medio: #8e44ad;
@@ -188,6 +190,7 @@
   </style>
 </head>
 <body>
+
   <audio id="musica" loop>
     <source src="rises-the-moon.mp3" type="audio/mpeg">
     Tu navegador no soporta audio HTML5.
@@ -198,22 +201,22 @@
     <p style="font-size: 1.3em; max-width: 80%; margin: 0 auto 30px;">
       "Te lo dedico con mucho amor 🥹..."
     </p>
-    <button onclick="verMensaje()">Ven, acompáñame cielo!!</button>
+    <button onclick="verMensaje()">¡Ven, acompáñame cielo!</button>
   </div>
 
   <div id="disculpas" class="seccion hidden">
     <div class="corazon">💜</div>
-    <h2 style="color: var(--morado-claro);">Mi corazón de melocotón   quería decirte que ...</h2>
+    <h2 style="color: var(--morado-claro);">Mi corazón de melocotón quería decirte que ...</h2>
     <p style="font-size: 1.1em; line-height: 1.8;">
       BB, gracias infinitamente por acompañarme en cada momento, siempre lo recordaré con la mejor impresión.  
       <b>I love you forever</b>.  
       Te aprecio, quiero, adoro y amo. Eres muy especial para mí 🥹
     </p>
-   <button id="boton-viaje" onclick="verBienvenida()">¿Me acompañas a este hermoso viaje, mi vida?</button>
+    <button id="boton-viaje" onclick="verBienvenida()">¿Me acompañas a este hermoso viaje, mi vida?</button>
   </div>
 
   <div id="bienvenida" class="seccion hidden">
-    <p style="font-size: 1.3em;">OH!! Bienvenida cielo, ven acompáñame</p>
+    <p style="font-size: 1.3em;">¡Oh! Bienvenida cielo, ven acompáñame</p>
   </div>
 
   <div id="imagenes-extra" class="seccion hidden">
@@ -222,152 +225,49 @@
       <img src="https://i.ibb.co/example4.jpg" alt="Recuerdo 4">
       <img src="https://i.ibb.co/example4.jpg" alt="Recuerdo 5">
     </div>
-      
-      <div id="recuerdo" class="text-white text-center text-xl mt-4">
-  <p style="font-size: 1.3em;">¿Te acuerdas? 🥹 jajaj tan bellos</p>
-</div>
 
-<div id="btn1-container" class="flex justify-center mt-10 hidden">
+    <div id="recuerdo" class="text-white text-center text-xl mt-4">
+      <p style="font-size: 1.3em;">¿Te acuerdas? 🥹 jajaj tan bellos</p>
+    </div>
+
+    <div id="btn1-container" class="flex justify-center mt-10 hidden">
       <button id="btn1" class="animate-pulse bg-purple-500 text-white font-bold py-2 px-4 rounded-full shadow-lg">
         Ven, sígueme
       </button>
     </div>
-      
-<div id="fotos-extra-dos" class="hidden">
-  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-      <img src="https://i.ibb.co/example3.jpg" alt="Recuerdo 1" class="rounded-xl shadow-md" />
-      <img src="https://i.ibb.co/example4.jpg" alt="Recuerdo 2" class="rounded-xl shadow-md" />
-      <img src="https://i.ibb.co/example5.jpg" alt="Recuerdo 3" class="rounded-xl shadow-md" />
-    </div>
-        
-      <div id="btn2-container" class="flex justify-center mt-10 hidden">
-      <button id="btn2" class="animate-pulse bg-purple-500 text-white font-bold py-2 px-4 rounded-full shadow-lg">
-        ¡Te acuerdas 🥹!
-      </button>   
-    </div>
-      
-      <section id="fotos-extra" class="hidden transition-opacity duration-1000 opacity-0">
-      <div class="bg-purple-200 p-4 rounded-2xl mt-10 flex flex-wrap justify-center gap-4">
-        <img src="foto4.jpg" class="w-40 rounded-xl shadow-md" />
-        <img src="foto5.jpg" class="w-40 rounded-xl shadow-md" />
+
+    <div id="fotos-extra-dos" class="hidden">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <img src="https://i.ibb.co/example3.jpg" alt="Recuerdo 1" class="rounded-xl shadow-md" />
+        <img src="https://i.ibb.co/example4.jpg" alt="Recuerdo 2" class="rounded-xl shadow-md" />
+        <img src="https://i.ibb.co/example5.jpg" alt="Recuerdo 3" class="rounded-xl shadow-md" />
       </div>
-    </section>
 
-    <section id="foto-oculta1" class="hidden flex justify-center mt-10 transition-opacity duration-1000 opacity-0">
-      <img src="foto7.jpg" class="w-60 rounded-xl shadow-lg" />
-    </section>
+      <div id="btn2-container" class="flex justify-center mt-10 hidden">
+        <button id="btn2" class="animate-pulse bg-purple-500 text-white font-bold py-2 px-4 rounded-full shadow-lg">
+          ¡Te acuerdas 🥹!
+        </button>
+      </div>
 
-    <div id="btn3-container" class="flex justify-center mt-10 hidden">
-      <button id="btn3" class="animate-pulse bg-purple-500 text-white font-bold py-2 px-4 rounded-full shadow-lg">
-        Te queria decir esto bb
-      </button>
+      <section id="fotos-extra" class="hidden transition-opacity duration-1000 opacity-0">
+        <div class="bg-purple-200 p-4 rounded-2xl mt-10 flex flex-wrap justify-center gap-4">
+          <img src="foto4.jpg" class="w-40 rounded-xl shadow-md" />
+          <img src="foto5.jpg" class="w-40 rounded-xl shadow-md" />
+        </div>
+      </section>
+
+      <section id="foto-oculta1" class="hidden flex justify-center mt-10 transition-opacity duration-1000 opacity-0">
+        <img src="foto7.jpg" class="w-60 rounded-xl shadow-lg" />
+      </section>
+
+      <div id="btn3-container" class="flex justify-center mt-10 hidden">
+        <button id="btn3" class="animate-pulse bg-purple-500 text-white font-bold py-2 px-4 rounded-full shadow-lg">
+          ¡Sígueme amorcito!
+        </button>
+      </div>
+
     </div>
-    
-    <section id="texto-final" class="hidden mt-10 text-center text-xl text-purple-700 font-semibold transition-opacity duration-1000 opacity-0">
-      qujegduiaedqwhegd
-    </section>
+  </div>
 
-  <script>
-  function controlarMusica() {
-    const musica = document.getElementById('musica');
-    const boton = document.getElementById('boton-musica');
-    if (musica.paused) {
-      musica.play();
-      boton.textContent = '⏸️';
-    } else {
-      musica.pause();
-      boton.textContent = '🎶';
-    }
-  }
-
-  function verMensaje() {
-    document.getElementById('disculpas').classList.remove('hidden');
-    document.getElementById('disculpas').scrollIntoView({ behavior: 'smooth' });
-  }
-
-  function verBienvenida() {
-    document.getElementById('bienvenida').classList.remove('hidden');
-    document.getElementById('bienvenida').scrollIntoView({ behavior: 'smooth' });
-
-    setTimeout(() => {
-      document.getElementById('imagenes-extra').classList.remove('hidden');
-      document.getElementById('imagenes-extra').scrollIntoView({ behavior: 'smooth' });
-
-      setTimeout(() => {
-        document.getElementById('seccion-extra').classList.remove('hidden');
-        // Si aquí está btn1-container por primera vez, aún no mostrarlo
-      }, 1500);
-    }, 1500);
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const btn1 = document.getElementById('btn1');
-    const btn2 = document.getElementById('btn2');
-    const btn3 = document.getElementById('btn3');
-
-    if (btn1) {
-    btn1.addEventListener('click', () => {
-      const fotosExtra = document.getElementById('fotos-extra');
-
-      if (fotosExtra) {
-        fotosExtra.classList.remove('hidden');
-        setTimeout(() => {
-          fotosExtra.classList.add('opacity-100');
-        }, 50);
-
-        fotosExtra.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  }
-
-
-    if (btn2) {
-      btn2.addEventListener('click', () => {
-        const fotoOculta = document.getElementById('foto-oculta1');
-        if (fotoOculta) {
-          fotoOculta.classList.remove('hidden');
-          fotoOculta.classList.add('opacity-100');
-        }
-        const btn3Container = document.getElementById('btn3-container');
-        if (btn3Container) {
-          btn3Container.classList.remove('hidden');
-        }
-      });
-    }
-
-    if (btn3) {
-      btn3.addEventListener('click', () => {
-        const textoFinal = document.getElementById('texto-final');
-        if (textoFinal) {
-          textoFinal.classList.remove('hidden');
-          textoFinal.classList.add('opacity-100');
-          textoFinal.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    }
-
-    // Mostrar el mensaje "¿Te acuerdas?" después de 3 segundos
-    setTimeout(() => {
-      const recuerdo = document.getElementById('recuerdo');
-      if (recuerdo) {
-        recuerdo.classList.add('mostrar');
-
-        const imagenesExtra = document.getElementById('imagenes-extra');
-        if (imagenesExtra) {
-          imagenesExtra.classList.add('mb-10');
-        }
-
-        // Mostrar botón "Ven, sígueme" después de 9 segundos
-        setTimeout(() => {
-          const btn1Container = document.getElementById('btn1-container');
-          if (btn1Container) {
-            btn1Container.classList.remove('hidden');
-            btn1Container.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        }, 9000);
-      }
-    }, 3000);
-  });
-</script>
 </body>
 </html>
