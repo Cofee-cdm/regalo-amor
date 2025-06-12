@@ -5,6 +5,15 @@
   <title>Para ti, Mi Corazón de Melocotón 💗🌷</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+      #recuerdo {
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+#recuerdo.mostrar {
+  display: block;
+  opacity: 1;
+}
     :root {
       --morado-oscuro: #6a3093;
       --morado-medio: #8e44ad;
@@ -184,10 +193,6 @@
     Tu navegador no soporta audio HTML5.
   </audio>
 
-  <div id="control-musica">
-    <button onclick="controlarMusica()" id="boton-musica">🎶</button>
-  </div>
-
   <div id="portada">
     <h1 style="font-size: 3em; margin-bottom: 20px;">Para ti, Mi Corazón de Melocotón 💗🌷</h1>
     <p style="font-size: 1.3em; max-width: 80%; margin: 0 auto 30px;">
@@ -222,10 +227,10 @@
 </section>
 </div> <!-- Cierra el cuadro morado del fondo -->
 
-    <div class="bg-purple-900 p-6 mt-10 rounded-2xl shadow-xl text-white text-center">
-  <p class="text-2xl font-semibold">¿Te acuerdas 🥹 jajaj tan bellos</p>
+    <div id="recuerdo" class="text-white text-center text-xl mt-4">
+  ¿Te acuerdas? 🥹 jajaj tan bellos
 </div>
- 
+
      <div id="btn1-container" class="flex justify-center mt-10 hidden">
       <button id="btn1" class="animate-pulse bg-purple-500 text-white font-bold py-2 px-4 rounded-full shadow-lg">
         Ven, sígueme
@@ -261,6 +266,7 @@
 
    
   <script>
+      
     function controlarMusica() {
       const musica = document.getElementById('musica');
       const boton = document.getElementById('boton-musica');
@@ -318,7 +324,15 @@
         textoFinal.classList.add('opacity-100');
         textoFinal.scrollIntoView({ behavior: 'smooth' });
       });
-    });
-  </script>
+        
+   // 👇 Mostrar el texto con retraso de 3 segundos
+    setTimeout(() => {
+      const recuerdo = document.getElementById('recuerdo');
+      if (recuerdo) {
+        recuerdo.classList.add('mostrar');
+      }
+    }, 3000);
+  });
+</script>
 </body>
 </html>
