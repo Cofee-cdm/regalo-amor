@@ -294,6 +294,10 @@
       document.getElementById('imagenes-extra').classList.remove('hidden');
       document.getElementById('imagenes-extra').scrollIntoView({ behavior: 'smooth' });
 
+    setTimeout(() => {
+      document.getElementById('imagenes-extra-dos').classList.remove('hidden');
+      document.getElementById('imagenes-extra-dos').scrollIntoView({ behavior: 'smooth' });
+
       setTimeout(() => {
         document.getElementById('seccion-extra').classList.remove('hidden');
     
@@ -308,8 +312,9 @@
 
     if (btn1) {
       btn1.addEventListener('click', () => {
-        const fotosExtra = document.getElementById('fotos-extra');
 
+        
+        const fotosExtra = document.getElementById('fotos-extra');
         if (fotosExtra) {
           fotosExtra.classList.remove('hidden');
           setTimeout(() => {
@@ -322,10 +327,14 @@
         const fotosExtraDos = document.getElementById("fotos-extra-dos");
         if (fotosExtraDos) {
           fotosExtraDos.classList.remove("hidden");
-        }
-      });
-    }
+          setTimeout(() => {
+            fotosExtra.classList.add('opacity-100');
+          }, 50);
 
+           fotosExtraDos.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+    
     if (btn2) {
       btn2.addEventListener('click', () => {
         const fotoOculta = document.getElementById('foto-oculta1');
@@ -360,6 +369,11 @@
         if (imagenesExtra) {
           imagenesExtra.classList.add('mb-10');
         }
+
+        const imagenesExtraDos = document.getElementById('imagenes-extra');
+        if (imagenesExtrados) {
+          imagenesExtraDos.classList.add('mb-10');
+        }  
 
         setTimeout(() => {
           const btn1Container = document.getElementById('btn1-container');
