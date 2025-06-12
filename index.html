@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Para ti, Mi Corazón de Melocotón 💗🌷</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
   <style>
       #recuerdo {
   display: none;
@@ -199,6 +200,7 @@
     <p style="font-size: 1.3em; max-width: 80%; margin: 0 auto 30px;">
       "Te lo dedico con mucho amor 🥹..."
     </p>
+     <div id="disculpas" class="hidden">
     <button onclick="verBienvenida()">Ven, acompáñame cielo!!</button>
   </div>
 
@@ -290,11 +292,12 @@
   }
 
 function verBienvenida() {
-    document.getElementById('portada').classList.add('hidden');
-    const bienvenida = document.getElementById('bienvenida');
-    bienvenida.classList.remove('hidden');
-    bienvenida.classList.add('fade-in');
-  }
+    document.getElementById('portada').style.display = 'none';
+  
+     const disculpas = document.getElementById('disculpas');
+  disculpas.classList.remove('hidden');
+  disculpas.classList.add('fade-in');
+}
 
   setTimeout(() => {
     const imgExtra = document.getElementById('imagenes-extra');
@@ -382,8 +385,7 @@ function verBienvenida() {
         }, 9000);
       }
     }, 3000);
-  });
-    
+  });  
 </script>
 </body> 
 </html>
